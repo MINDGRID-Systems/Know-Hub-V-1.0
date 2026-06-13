@@ -4,27 +4,14 @@
 <link rel="icon" type="image/png" href="by MINDGRID SYSTEMS.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KnowHub — Digital Knowledge Hub
-  Because “I knew this yesterday” is not a revision strategy.
-</title>
+<title>KnowHub — Digital Knowledge Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0C1322;          /* deep ink-blue base */
-  --ink-2:#111A2E;        /* raised surface */
-  --ink-3:#18233C;        /* card surface */
-  --line:#26334F;         /* hairline */
-  --text:#E8ECF4;
-  --muted:#94A3BF;
-  --gold:#FB7185;         /* primary accent */
-  --gold-soft:rgba(240,180,60,.12);
-  --uae:#34D399;          /* category colors */
-  --world:#60A5FA;
-  --tech:#C084FC;
-  --econ:#F0B43C;
-  --quiz:#F87171;
-  --country:#2DD4BF;
+  --ink:#0C1322; --ink-2:#111A2E; --ink-3:#18233C; --line:#26334F;
+  --text:#E8ECF4; --muted:#94A3BF; --gold:#FB7185; --gold-soft:rgba(251,113,133,.13);
+  --uae:#34D399; --world:#60A5FA; --tech:#C084FC; --econ:#F0B43C; --quiz:#F87171; --country:#2DD4BF;
   --radius:14px;
   --font-display:'Space Grotesk',system-ui,sans-serif;
   --font-body:'Inter',system-ui,sans-serif;
@@ -35,27 +22,22 @@ html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh}
 button{font-family:inherit;cursor:pointer}
 a{color:var(--gold)}
-
-/* ---------- Top bar ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:rgba(12,19,34,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .topbar-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:14px 20px;flex-wrap:wrap}
-.logo{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:.5px;margin-right:auto;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:.5px;display:flex;align-items:center;gap:10px;white-space:nowrap}
 .logo .dot{width:10px;height:10px;border-radius:3px;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+.brandline{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-right:auto;padding-left:4px}
 .nav{display:flex;gap:4px;flex-wrap:wrap}
 .nav button{background:none;border:1px solid transparent;color:var(--muted);padding:7px 13px;border-radius:9px;font-size:13.5px;font-weight:500;transition:.18s}
 .nav button:hover{color:var(--text);background:var(--ink-3)}
 .nav button.active{color:var(--ink);background:var(--gold);font-weight:600}
 .nav button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-
-/* ---------- Fact ticker (signature) ---------- */
 .ticker{border-bottom:1px solid var(--line);background:var(--ink-2);overflow:hidden;white-space:nowrap}
 .ticker-track{display:inline-block;padding:8px 0;animation:tick 75s linear infinite;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
 .ticker-track b{color:var(--gold);font-weight:600}
 .ticker:hover .ticker-track{animation-play-state:paused}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
-
-/* ---------- Layout ---------- */
 .page{max-width:1180px;margin:0 auto;padding:34px 20px 80px;display:none}
 .page.active{display:block;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -63,8 +45,6 @@ a{color:var(--gold)}
 h1{font-family:var(--font-display);font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.15;margin-bottom:12px}
 h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 14px}
 .lede{color:var(--muted);max-width:640px;margin-bottom:26px}
-
-/* ---------- Cards ---------- */
 .grid{display:grid;gap:16px}
 .grid.cols-3{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
 .grid.cols-4{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
@@ -73,7 +53,7 @@ h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 
 .card .tag{display:inline-block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-bottom:11px;font-weight:600}
 .card h3{font-family:var(--font-display);font-size:16.5px;font-weight:600;line-height:1.35;margin-bottom:8px}
 .card p{font-size:13.5px;color:var(--muted)}
-.card .why{margin-top:12px;padding:10px 12px;background:var(--gold-soft);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:12.5px;color:#E4D4AC}
+.card .why{margin-top:12px;padding:10px 12px;background:var(--gold-soft);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:12.5px;color:#F3D2D9}
 .card .why b{color:var(--gold)}
 .card .src{margin-top:10px;font-family:var(--font-mono);font-size:11px;color:#5F7196}
 .t-uae{background:rgba(52,211,153,.14);color:var(--uae)} .b-uae{border-top:3px solid var(--uae)}
@@ -82,8 +62,6 @@ h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 
 .t-econ{background:rgba(240,180,60,.14);color:var(--econ)} .b-econ{border-top:3px solid var(--econ)}
 .t-quiz{background:rgba(248,113,113,.14);color:var(--quiz)} .b-quiz{border-top:3px solid var(--quiz)}
 .t-country{background:rgba(45,212,191,.14);color:var(--country)} .b-country{border-top:3px solid var(--country)}
-
-/* ---------- Home hub grid ---------- */
 .hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:28px}
 .hub-tile{text-align:left;background:var(--ink-3);border:1px solid var(--line);border-radius:var(--radius);padding:24px;color:var(--text);transition:.2s}
 .hub-tile:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
@@ -91,19 +69,15 @@ h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 
 .hub-tile h3{font-family:var(--font-display);font-size:17px;margin-bottom:6px}
 .hub-tile p{font-size:13px;color:var(--muted)}
 .hub-tile .go{display:inline-block;margin-top:12px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:1px;color:var(--gold)}
-
-/* ---------- AI fetch bar ---------- */
 .fetchbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:22px}
 .fetchbar .info{font-size:12.5px;color:var(--muted);flex:1;min-width:200px}
 .btn{background:var(--gold);color:var(--ink);border:none;padding:9px 18px;border-radius:9px;font-weight:600;font-size:13.5px;transition:.18s}
-.btn:hover{filter:brightness(1.1)}
+.btn:hover{filter:brightness(1.08)}
 .btn:disabled{opacity:.5;cursor:wait}
 .btn.ghost{background:var(--ink-3);color:var(--text);border:1px solid var(--line)}
 .spinner{display:none;width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .status{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
-
-/* ---------- Country cards ---------- */
 .cc{display:flex;flex-direction:column;gap:6px}
 .cc .flag{font-size:34px;line-height:1}
 .cc table{width:100%;font-size:12.5px;border-collapse:collapse;margin-top:4px}
@@ -113,21 +87,17 @@ h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 
 .searchrow{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
 .searchrow input{flex:1;min-width:220px;background:var(--ink-3);border:1px solid var(--line);border-radius:9px;padding:10px 14px;color:var(--text);font-family:inherit;font-size:14px}
 .searchrow input:focus{outline:2px solid var(--gold);border-color:transparent}
-
-/* ---------- Brands ---------- */
 .brand{display:flex;gap:14px;align-items:flex-start}
 .mono{flex:none;width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:21px;color:#fff}
 .brand .tagline{font-style:italic;color:var(--text);font-size:13.5px;margin:3px 0 6px}
 .brand .meta{font-family:var(--font-mono);font-size:11px;color:#5F7196}
 .note{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--muted);margin-bottom:22px}
-
-/* ---------- Quiz ---------- */
 .flash{perspective:1000px;cursor:pointer;min-height:150px}
 .flash-inner{position:relative;width:100%;height:100%;min-height:150px;transition:transform .5s;transform-style:preserve-3d}
 .flash.flipped .flash-inner{transform:rotateY(180deg)}
 .flash-face{position:absolute;inset:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;border-radius:var(--radius);border:1px solid var(--line)}
 .flash-front{background:var(--ink-3);font-family:var(--font-display);font-size:15.5px;font-weight:600}
-.flash-back{background:var(--gold-soft);border-color:rgba(240,180,60,.4);transform:rotateY(180deg);color:var(--gold);font-size:14.5px;font-weight:600}
+.flash-back{background:var(--gold-soft);border-color:rgba(251,113,133,.4);transform:rotateY(180deg);color:var(--gold);font-size:14.5px;font-weight:600}
 .flash .hint{position:absolute;bottom:8px;right:12px;font-family:var(--font-mono);font-size:10px;color:#5F7196}
 .qz{background:var(--ink-3);border:1px solid var(--line);border-radius:var(--radius);padding:26px;max-width:680px}
 .qz .qno{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:1.5px;margin-bottom:10px}
@@ -140,38 +110,68 @@ h2{font-family:var(--font-display);font-size:21px;font-weight:600;margin:34px 0 
 ul.tips{list-style:none}
 ul.tips li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
 ul.tips li b{color:var(--text)}
-ul.tips li::before{content:"◆";position:absolute;left:2px;color:var(--gold);font-size:10px;top:14px}
-
-/* ---------- Sources ---------- */
+ul.tips li::before{content:"\25C6";position:absolute;left:2px;color:var(--gold);font-size:10px;top:14px}
 .srcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .srcgrid .card{padding:16px}
 .srcgrid h3{font-size:14.5px}
+/* ----- player bar / chips ----- */
+.pbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin-bottom:22px}
+.pbar input{background:var(--ink-3);border:1px solid var(--line);border-radius:9px;padding:8px 12px;color:var(--text);font-family:inherit;font-size:13.5px;min-width:160px}
+.pbar input:focus{outline:2px solid var(--gold);border-color:transparent}
+.pbar .who{font-size:13px;color:var(--muted)}
+.pbar .who b{color:var(--text)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.chip{font-family:var(--font-mono);font-size:11px;background:var(--ink-3);border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:var(--muted)}
+.chip b{color:var(--gold)}
+/* ----- cram ----- */
+.cram-top{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.filterbtn{font-size:12.5px;background:var(--ink-3);border:1px solid var(--line);color:var(--muted);padding:7px 13px;border-radius:99px;transition:.15s}
+.filterbtn:hover{color:var(--text)}
+.filterbtn.active{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+.cram-stage{background:var(--ink-3);border:1px solid var(--line);border-radius:var(--radius);padding:28px;max-width:720px;min-height:230px;display:flex;flex-direction:column}
+.cram-bar{height:6px;background:var(--ink);border-radius:99px;overflow:hidden;margin-bottom:18px}
+.cram-bar i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.cram-cat{font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px}
+.cram-q{font-family:var(--font-display);font-size:21px;font-weight:600;line-height:1.3}
+.cram-a{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);font-size:15px;color:#F3D2D9;display:none}
+.cram-a.show{display:block;animation:fade .25s}
+.cram-ctl{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.cram-count{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-left:auto;align-self:center}
+/* ----- leaderboard ----- */
+.board{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--ink-3);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.board th{font-family:var(--font-mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#5F7196;text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+.board td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--text)}
+.board tr:last-child td{border-bottom:none}
+.board tr.me{background:var(--gold-soft)}
+.board .rk{font-family:var(--font-mono);color:var(--gold);font-weight:600;width:46px}
+.board .nm{font-weight:600}
+.sorttabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.medal{font-size:15px}
+.qotd-head{font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.qotd-done{margin-top:10px;padding:10px 14px;border-radius:10px;font-size:14px}
+.qotd-done.good{background:rgba(52,211,153,.14);color:var(--uae)}
+.qotd-done.bad{background:rgba(248,113,113,.12);color:var(--quiz)}
+.qotd-home{background:linear-gradient(135deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.qotd-home .q{flex:1;min-width:220px}
+.qotd-home .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.qotd-home .txt{font-family:var(--font-display);font-weight:600;font-size:15.5px}
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;font-size:12.5px;color:#5F7196;font-family:var(--font-mono)}
-@media(max-width:640px){.topbar-inner{padding:10px 14px}.nav button{padding:6px 9px;font-size:12px}}
+@media(max-width:640px){.topbar-inner{padding:10px 14px}.nav button{padding:6px 9px;font-size:12px}.brandline{display:none}}
 </style>
 </head>
 <body>
-
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo"><span class="dot"></span>KNOWHUB</div>
-    <div class="logo"><span class="why"></span>by MindGrid Systems</div>
-    <div class="eyebrow">
-  “Because ‘I knew this yesterday’ is not a revision strategy.”
-</div>
+    <div class="brandline">by MindGrid Systems — "Because 'I knew this yesterday' is not a revision strategy."</div>
     <nav class="nav" id="nav"></nav>
   </div>
 </header>
-
 <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
-
 <main id="pages"></main>
-
-<footer>KNOWHUB · A student knowledge system · Content summarized for learning from Gulf News, Reuters, TOI, FT, GKToday, Jagran Josh, UN, NASA, SpaceX & MIT Tech Review</footer>
-
+<footer>KNOWHUB by MindGrid Systems · Content summarized for learning from Gulf News, Reuters, TOI, FT, GKToday, Jagran Josh, UN, NASA, SpaceX & MIT Tech Review</footer>
 <script>
 /* ================= DATA ================= */
-
 const TICKER_FACTS = [
   ["UN","has 193 member states"],["UAE","federation of 7 emirates, founded 2 Dec 1971"],
   ["BRICS","expanded beyond its original five members"],["Burj Khalifa","828 m — tallest building on Earth"],
@@ -180,7 +180,6 @@ const TICKER_FACTS = [
   ["IMF & World Bank","both headquartered in Washington D.C."],["COP28","was hosted by the UAE in Dubai, 2023"],
   ["Suez Canal","connects the Mediterranean & Red Sea"],["Veto powers","US, UK, France, Russia, China (UNSC P5)"],
 ];
-
 const NEWS_SEED = {
   uae: [
     {tag:"uae",h:"UAE's federal structure",p:"The UAE is a federation of seven emirates — Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah — founded on 2 December 1971.",w:"Foundation fact for almost every UAE quiz round and MUN country profile.",s:"Curated · GKToday"},
@@ -207,7 +206,6 @@ const NEWS_SEED = {
     {tag:"econ",h:"Big Tech economy",p:"Companies like Apple, Microsoft, NVIDIA and Saudi Aramco rank among the world's most valuable — NVIDIA's rise rode the AI chip boom.",w:"'Most valuable company' is a fast-changing, frequently asked fact.",s:"Curated · FT / Reuters"},
   ],
 };
-
 const COUNTRIES = [
 {f:"🇦🇫",n:"Afghanistan",cap:"Kabul",pop:"~42 million",lang:"Pashto, Dari",cur:"Afghan Afghani (AFN)",fact:"Landlocked country; Hindu Kush mountains dominate geography."},
 {f:"🇦🇱",n:"Albania",cap:"Tirana",pop:"~2.8 million",lang:"Albanian",cur:"Lek (ALL)",fact:"Balkan country with Mediterranean coastline."},
@@ -215,11 +213,10 @@ const COUNTRIES = [
 {f:"🇦🇩",n:"Andorra",cap:"Andorra la Vella",pop:"~80k",lang:"Catalan",cur:"Euro (EUR)",fact:"Microstate in the Pyrenees between France and Spain."},
 {f:"🇦🇴",n:"Angola",cap:"Luanda",pop:"~36 million",lang:"Portuguese",cur:"Kwanza (AOA)",fact:"Rich in oil and diamonds."},
 {f:"🇦🇷",n:"Argentina",cap:"Buenos Aires",pop:"~46 million",lang:"Spanish",cur:"Argentine Peso (ARS)",fact:"Home of tango and Patagonia region."},
-{f:"🇦🇲",n:"Armenia",cap:"Yerevan",pop:"~3 million",lang:"Armenian",cur:"Dram (AMD)",fact:"One of the world’s oldest Christian civilizations."},
+{f:"🇦🇲",n:"Armenia",cap:"Yerevan",pop:"~3 million",lang:"Armenian",cur:"Dram (AMD)",fact:"One of the world's oldest Christian civilizations."},
 {f:"🇦🇺",n:"Australia",cap:"Canberra",pop:"~27 million",lang:"English",cur:"Australian Dollar (AUD)",fact:"Only country that is also a continent."},
 {f:"🇦🇹",n:"Austria",cap:"Vienna",pop:"~9 million",lang:"German",cur:"Euro (EUR)",fact:"Known for classical music heritage."},
 {f:"🇦🇿",n:"Azerbaijan",cap:"Baku",pop:"~10 million",lang:"Azerbaijani",cur:"Manat (AZN)",fact:"Rich oil and gas reserves in Caspian region."},
-
 {f:"🇧🇸",n:"Bahamas",cap:"Nassau",pop:"~400k",lang:"English",cur:"Bahamian Dollar (BSD)",fact:"Caribbean island nation known for tourism."},
 {f:"🇧🇭",n:"Bahrain",cap:"Manama",pop:"~1.5 million",lang:"Arabic",cur:"Bahraini Dinar (BHD)",fact:"Island nation and financial hub in Gulf."},
 {f:"🇧🇩",n:"Bangladesh",cap:"Dhaka",pop:"~173 million",lang:"Bengali",cur:"Taka (BDT)",fact:"One of the most densely populated countries."},
@@ -227,31 +224,26 @@ const COUNTRIES = [
 {f:"🇧🇾",n:"Belarus",cap:"Minsk",pop:"~9 million",lang:"Belarusian, Russian",cur:"Belarusian Ruble (BYN)",fact:"Landlocked Eastern European country."},
 {f:"🇧🇪",n:"Belgium",cap:"Brussels",pop:"~11.7 million",lang:"Dutch, French, German",cur:"Euro (EUR)",fact:"Hosts EU and NATO headquarters."},
 {f:"🇧🇿",n:"Belize",cap:"Belmopan",pop:"~400k",lang:"English",cur:"Belize Dollar (BZD)",fact:"Only Central American country with English official language."},
-
 {f:"🇧🇯",n:"Benin",cap:"Porto-Novo",pop:"~14 million",lang:"French",cur:"CFA Franc (XOF)",fact:"West African nation with strong cultural heritage."},
 {f:"🇧🇹",n:"Bhutan",cap:"Thimphu",pop:"~800k",lang:"Dzongkha",cur:"Ngultrum (BTN)",fact:"Measures success via Gross National Happiness."},
 {f:"🇧🇴",n:"Bolivia",cap:"Sucre (constitutional), La Paz (admin)",pop:"~12 million",lang:"Spanish, Quechua, Aymara",cur:"Boliviano (BOB)",fact:"One of the highest altitude capitals in the world."},
 {f:"🇧🇦",n:"Bosnia and Herzegovina",cap:"Sarajevo",pop:"~3.2 million",lang:"Bosnian, Serbian, Croatian",cur:"Convertible Mark (BAM)",fact:"Balkan country with complex ethnic composition."},
 {f:"🇧🇼",n:"Botswana",cap:"Gaborone",pop:"~2.7 million",lang:"English, Tswana",cur:"Pula (BWP)",fact:"Stable democracy and diamond-rich economy."},
 {f:"🇧🇷",n:"Brazil",cap:"Brasília",pop:"~216 million",lang:"Portuguese",cur:"Real (BRL)",fact:"Largest country in South America; Amazon rainforest."},
-
 {f:"🇧🇳",n:"Brunei",cap:"Bandar Seri Begawan",pop:"~460k",lang:"Malay",cur:"Brunei Dollar (BND)",fact:"Wealthy oil-rich Southeast Asian sultanate."},
-{f:"🇧🇬",n:"Bulgaria",cap:"Sofia",pop:"~6.5 million",lang:"Bulgarian",cur:"Lev (BGN)",fact:"One of Europe’s oldest states."},
+{f:"🇧🇬",n:"Bulgaria",cap:"Sofia",pop:"~6.5 million",lang:"Bulgarian",cur:"Lev (BGN)",fact:"One of Europe's oldest states."},
 {f:"🇧🇫",n:"Burkina Faso",cap:"Ouagadougou",pop:"~23 million",lang:"French",cur:"CFA Franc (XOF)",fact:"Landlocked West African nation."},
-{f:"🇧🇮",n:"Burundi",cap:"Gitega",pop:"~13 million",lang:"Kirundi, French",cur:"Burundian Franc (BIF)",fact:"One of Africa’s smallest countries."},
-
+{f:"🇧🇮",n:"Burundi",cap:"Gitega",pop:"~13 million",lang:"Kirundi, French",cur:"Burundian Franc (BIF)",fact:"One of Africa's smallest countries."},
 {f:"🇨🇻",n:"Cabo Verde",cap:"Praia",pop:"~600k",lang:"Portuguese",cur:"Escudo (CVE)",fact:"Island nation off West Africa."},
 {f:"🇰🇭",n:"Cambodia",cap:"Phnom Penh",pop:"~17 million",lang:"Khmer",cur:"Riel (KHR)",fact:"Home to Angkor Wat temple complex."},
 {f:"🇨🇲",n:"Cameroon",cap:"Yaoundé",pop:"~29 million",lang:"French, English",cur:"CFA Franc (XAF)",fact:"Known as 'Africa in miniature'."},
 {f:"🇨🇦",n:"Canada",cap:"Ottawa",pop:"~41 million",lang:"English, French",cur:"Canadian Dollar (CAD)",fact:"Second-largest country by land area."},
 {f:"🇨🇫",n:"Central African Republic",cap:"Bangui",pop:"~5 million",lang:"French, Sango",cur:"CFA Franc (XAF)",fact:"Landlocked Central African nation."},
-
 {f:"🇹🇩",n:"Chad",cap:"N'Djamena",pop:"~19 million",lang:"French, Arabic",cur:"CFA Franc (XAF)",fact:"Located in the Sahel region of Africa."},
-{f:"🇨🇱",n:"Chile",cap:"Santiago",pop:"~19 million",lang:"Spanish",cur:"Chilean Peso (CLP)",fact:"Long narrow country along South America’s west coast."},
-{f:"🇨🇳",n:"China",cap:"Beijing",pop:"~1.41 billion",lang:"Mandarin",cur:"Yuan (CNY)",fact:"World’s second-largest economy."},
+{f:"🇨🇱",n:"Chile",cap:"Santiago",pop:"~19 million",lang:"Spanish",cur:"Chilean Peso (CLP)",fact:"Long narrow country along South America's west coast."},
+{f:"🇨🇳",n:"China",cap:"Beijing",pop:"~1.41 billion",lang:"Mandarin",cur:"Yuan (CNY)",fact:"World's second-largest economy."},
 {f:"🇨🇴",n:"Colombia",cap:"Bogotá",pop:"~52 million",lang:"Spanish",cur:"Peso (COP)",fact:"Only South American country with Caribbean and Pacific coastlines."},
 {f:"🇰🇲",n:"Comoros",cap:"Moroni",pop:"~900k",lang:"Arabic, French, Comorian",cur:"Comorian Franc (KMF)",fact:"Island nation between Madagascar and Mozambique."},
-
 {f:"🇨🇬",n:"Congo (Republic)",cap:"Brazzaville",pop:"~6 million",lang:"French",cur:"CFA Franc (XAF)",fact:"Oil-rich Central African country."},
 {f:"🇨🇩",n:"DR Congo",cap:"Kinshasa",pop:"~102 million",lang:"French",cur:"Congolese Franc (CDF)",fact:"Second-largest African country by area."},
 {f:"🇨🇷",n:"Costa Rica",cap:"San José",pop:"~5.2 million",lang:"Spanish",cur:"Colón (CRC)",fact:"Known for biodiversity and no standing army."},
@@ -259,31 +251,25 @@ const COUNTRIES = [
 {f:"🇨🇺",n:"Cuba",cap:"Havana",pop:"~11 million",lang:"Spanish",cur:"Cuban Peso (CUP)",fact:"Caribbean island with socialist system."},
 {f:"🇨🇾",n:"Cyprus",cap:"Nicosia",pop:"~1.2 million",lang:"Greek, Turkish",cur:"Euro (EUR)",fact:"Mediterranean island divided politically."},
 {f:"🇨🇿",n:"Czech Republic",cap:"Prague",pop:"~10.5 million",lang:"Czech",cur:"Czech Koruna (CZK)",fact:"Central European industrial economy."},
-
 {f:"🇩🇰",n:"Denmark",cap:"Copenhagen",pop:"~6 million",lang:"Danish",cur:"Krone (DKK)",fact:"Consistently ranked among happiest countries."},
 {f:"🇩🇯",n:"Djibouti",cap:"Djibouti City",pop:"~1.1 million",lang:"French, Arabic",cur:"Franc (DJF)",fact:"Strategic Red Sea shipping location."},
 {f:"🇩🇲",n:"Dominica",cap:"Roseau",pop:"~70k",lang:"English",cur:"East Caribbean Dollar (XCD)",fact:"Known as 'Nature Island' of Caribbean."},
 {f:"🇩🇴",n:"Dominican Republic",cap:"Santo Domingo",pop:"~11 million",lang:"Spanish",cur:"Peso (DOP)",fact:"Shared island of Hispaniola with Haiti."},
-
 {f:"🇪🇨",n:"Ecuador",cap:"Quito",pop:"~18 million",lang:"Spanish",cur:"US Dollar (USD)",fact:"Home to Galápagos Islands."},
 {f:"🇪🇬",n:"Egypt",cap:"Cairo",pop:"~112 million",lang:"Arabic",cur:"Egyptian Pound (EGP)",fact:"Ancient civilization along Nile River."},
 {f:"🇸🇻",n:"El Salvador",cap:"San Salvador",pop:"~6.3 million",lang:"Spanish",cur:"US Dollar (USD)",fact:"Smallest country in Central America."},
-
 {f:"🇬🇶",n:"Equatorial Guinea",cap:"Malabo",pop:"~1.7 million",lang:"Spanish, French, Portuguese",cur:"CFA Franc (XAF)",fact:"Oil-rich Central African nation."},
 {f:"🇪🇷",n:"Eritrea",cap:"Asmara",pop:"~3.7 million",lang:"Tigrinya, Arabic, English",cur:"Nakfa (ERN)",fact:"Located in the Horn of Africa."},
 {f:"🇪🇪",n:"Estonia",cap:"Tallinn",pop:"~1.3 million",lang:"Estonian",cur:"Euro (EUR)",fact:"Highly digital society."},
 {f:"🇸🇿",n:"Eswatini",cap:"Mbabane",pop:"~1.2 million",lang:"Swazi, English",cur:"Lilangeni (SZL)",fact:"Absolute monarchy in Southern Africa."},
 {f:"🇪🇹",n:"Ethiopia",cap:"Addis Ababa",pop:"~126 million",lang:"Amharic",cur:"Birr (ETB)",fact:"Never colonized in modern African history."},
-
 {f:"🇫🇯",n:"Fiji",cap:"Suva",pop:"~900k",lang:"English, Fijian",cur:"Fijian Dollar (FJD)",fact:"Island nation in the South Pacific."},
 {f:"🇫🇮",n:"Finland",cap:"Helsinki",pop:"~5.6 million",lang:"Finnish, Swedish",cur:"Euro (EUR)",fact:"Known for education system and happiness."},
 {f:"🇫🇷",n:"France",cap:"Paris",pop:"~68 million",lang:"French",cur:"Euro (EUR)",fact:"Major EU and UN Security Council member."},
-
 {f:"🇬🇦",n:"Gabon",cap:"Libreville",pop:"~2.5 million",lang:"French",cur:"CFA Franc (XAF)",fact:"Equatorial African rainforest country."},
 {f:"🇬🇲",n:"Gambia",cap:"Banjul",pop:"~2.7 million",lang:"English",cur:"Dalasi (GMD)",fact:"Smallest mainland African country."},
 {f:"🇬🇪",n:"Georgia",cap:"Tbilisi",pop:"~3.7 million",lang:"Georgian",cur:"Lari (GEL)",fact:"Located at crossroads of Europe and Asia."},
-{f:"🇩🇪",n:"Germany",cap:"Berlin",pop:"~84 million",lang:"German",cur:"Euro (EUR)",fact:"Europe’s largest economy."},
-
+{f:"🇩🇪",n:"Germany",cap:"Berlin",pop:"~84 million",lang:"German",cur:"Euro (EUR)",fact:"Europe's largest economy."},
 {f:"🇬🇭",n:"Ghana",cap:"Accra",pop:"~34 million",lang:"English",cur:"Cedi (GHS)",fact:"First African country to gain independence from colonial rule (1957)."},
 {f:"🇬🇷",n:"Greece",cap:"Athens",pop:"~10 million",lang:"Greek",cur:"Euro (EUR)",fact:"Birthplace of democracy."},
 {f:"🇬🇩",n:"Grenada",cap:"St. George's",pop:"~120k",lang:"English",cur:"East Caribbean Dollar (XCD)",fact:"Known as 'Spice Island'."},
@@ -291,58 +277,46 @@ const COUNTRIES = [
 {f:"🇬🇳",n:"Guinea",cap:"Conakry",pop:"~14 million",lang:"French",cur:"Guinean Franc (GNF)",fact:"Rich in bauxite reserves."},
 {f:"🇬🇼",n:"Guinea-Bissau",cap:"Bissau",pop:"~2.1 million",lang:"Portuguese",cur:"CFA Franc (XOF)",fact:"West African coastal state."},
 {f:"🇬🇾",n:"Guyana",cap:"Georgetown",pop:"~800k",lang:"English",cur:"Guyanese Dollar (GYD)",fact:"Only English-speaking country in South America."},
-
 {f:"🇭🇹",n:"Haiti",cap:"Port-au-Prince",pop:"~11.7 million",lang:"French, Haitian Creole",cur:"Gourde (HTG)",fact:"First independent Black republic."},
 {f:"🇭🇳",n:"Honduras",cap:"Tegucigalpa",pop:"~10 million",lang:"Spanish",cur:"Lempira (HNL)",fact:"Part of ancient Mayan region."},
 {f:"🇭🇺",n:"Hungary",cap:"Budapest",pop:"~9.6 million",lang:"Hungarian",cur:"Forint (HUF)",fact:"Central European nation along Danube."},
-
 {f:"🇮🇸",n:"Iceland",cap:"Reykjavik",pop:"~390k",lang:"Icelandic",cur:"Krona (ISK)",fact:"Volcanic island with geothermal energy."},
-{f:"🇮🇳",n:"India",cap:"New Delhi",pop:"~1.43 billion",lang:"Hindi, English +21",cur:"Rupee (INR)",fact:"World’s largest democracy."},
-{f:"🇮🇩",n:"Indonesia",cap:"Jakarta",pop:"~277 million",lang:"Indonesian",cur:"Rupiah (IDR)",fact:"World’s largest archipelago."},
-
+{f:"🇮🇳",n:"India",cap:"New Delhi",pop:"~1.43 billion",lang:"Hindi, English +21",cur:"Rupee (INR)",fact:"World's largest democracy."},
+{f:"🇮🇩",n:"Indonesia",cap:"Jakarta",pop:"~277 million",lang:"Indonesian",cur:"Rupiah (IDR)",fact:"World's largest archipelago."},
 {f:"🇮🇷",n:"Iran",cap:"Tehran",pop:"~89 million",lang:"Persian",cur:"Rial (IRR)",fact:"Ancient Persian civilization."},
 {f:"🇮🇶",n:"Iraq",cap:"Baghdad",pop:"~45 million",lang:"Arabic, Kurdish",cur:"Dinar (IQD)",fact:"Cradle of Mesopotamian civilization."},
 {f:"🇮🇪",n:"Ireland",cap:"Dublin",pop:"~5.3 million",lang:"English, Irish",cur:"Euro (EUR)",fact:"Known for literature and tech hubs."},
 {f:"🇮🇱",n:"Israel",cap:"Jerusalem",pop:"~9.5 million",lang:"Hebrew",cur:"Shekel (ILS)",fact:"High-tech innovation hub."},
 {f:"🇮🇹",n:"Italy",cap:"Rome",pop:"~59 million",lang:"Italian",cur:"Euro (EUR)",fact:"Home to Roman Empire heritage."},
-
 {f:"🇯🇲",n:"Jamaica",cap:"Kingston",pop:"~2.8 million",lang:"English",cur:"Jamaican Dollar (JMD)",fact:"Birthplace of reggae music."},
 {f:"🇯🇵",n:"Japan",cap:"Tokyo",pop:"~124 million",lang:"Japanese",cur:"Yen (JPY)",fact:"Global leader in robotics and technology."},
 {f:"🇯🇴",n:"Jordan",cap:"Amman",pop:"~11 million",lang:"Arabic",cur:"Dinar (JOD)",fact:"Home to Petra ancient city."},
-
 {f:"🇰🇿",n:"Kazakhstan",cap:"Astana",pop:"~20 million",lang:"Kazakh, Russian",cur:"Tenge (KZT)",fact:"Largest landlocked country."},
 {f:"🇰🇪",n:"Kenya",cap:"Nairobi",pop:"~55 million",lang:"Swahili, English",cur:"Shilling (KES)",fact:"Strong wildlife and tech sector."},
 {f:"🇰🇮",n:"Kiribati",cap:"Tarawa",pop:"~120k",lang:"English, Gilbertese",cur:"AUD",fact:"Pacific island nation threatened by sea level rise."},
-
 {f:"🇰🇵",n:"North Korea",cap:"Pyongyang",pop:"~26 million",lang:"Korean",cur:"Won (KPW)",fact:"Highly isolated state in East Asia."},
 {f:"🇰🇷",n:"South Korea",cap:"Seoul",pop:"~52 million",lang:"Korean",cur:"Won (KRW)",fact:"Global leader in electronics and K-culture."},
 {f:"🇰🇼",n:"Kuwait",cap:"Kuwait City",pop:"~4.3 million",lang:"Arabic",cur:"Dinar (KWD)",fact:"One of the richest countries per capita."},
-
 {f:"🇰🇬",n:"Kyrgyzstan",cap:"Bishkek",pop:"~7 million",lang:"Kyrgyz, Russian",cur:"Som (KGS)",fact:"Mountainous Central Asian nation."},
-
 {f:"🇱🇦",n:"Laos",cap:"Vientiane",pop:"~7.5 million",lang:"Lao",cur:"Kip (LAK)",fact:"Landlocked Southeast Asian country."},
 {f:"🇱🇻",n:"Latvia",cap:"Riga",pop:"~1.8 million",lang:"Latvian",cur:"Euro (EUR)",fact:"Baltic state with rich forests."},
 {f:"🇱🇧",n:"Lebanon",cap:"Beirut",pop:"~5.5 million",lang:"Arabic",cur:"Pound (LBP)",fact:"Mediterranean country with ancient Phoenician roots."},
 {f:"🇱🇸",n:"Lesotho",cap:"Maseru",pop:"~2.3 million",lang:"Sesotho, English",cur:"Loti (LSL)",fact:"Landlocked inside South Africa."},
 {f:"🇱🇷",n:"Liberia",cap:"Monrovia",pop:"~5.4 million",lang:"English",cur:"Dollar (LRD)",fact:"Founded by freed American slaves."},
 {f:"🇱🇾",n:"Libya",cap:"Tripoli",pop:"~7.2 million",lang:"Arabic",cur:"Dinar (LYD)",fact:"Oil-rich North African country."},
-
 {f:"🇱🇮",n:"Liechtenstein",cap:"Vaduz",pop:"~40k",lang:"German",cur:"Swiss Franc (CHF)",fact:"Tiny Alpine microstate."},
 {f:"🇱🇹",n:"Lithuania",cap:"Vilnius",pop:"~2.8 million",lang:"Lithuanian",cur:"Euro (EUR)",fact:"Baltic nation with strong tech growth."},
 {f:"🇱🇺",n:"Luxembourg",cap:"Luxembourg City",pop:"~670k",lang:"Luxembourgish, French, German",cur:"Euro (EUR)",fact:"One of richest countries in the world."},
-
 {f:"🇲🇬",n:"Madagascar",cap:"Antananarivo",pop:"~30 million",lang:"Malagasy, French",cur:"Ariary (MGA)",fact:"Island famous for unique biodiversity."},
 {f:"🇲🇼",n:"Malawi",cap:"Lilongwe",pop:"~21 million",lang:"English, Chichewa",cur:"Kwacha (MWK)",fact:"Known as 'Warm Heart of Africa'."},
 {f:"🇲🇾",n:"Malaysia",cap:"Kuala Lumpur",pop:"~34 million",lang:"Malay",cur:"Ringgit (MYR)",fact:"Major Southeast Asian trading hub."},
 {f:"🇲🇻",n:"Maldives",cap:"Malé",pop:"~520k",lang:"Dhivehi",cur:"Rufiyaa (MVR)",fact:"Lowest country in the world by elevation."},
-
 {f:"🇲🇱",n:"Mali",cap:"Bamako",pop:"~23 million",lang:"French",cur:"CFA Franc (XOF)",fact:"Home to ancient Mali Empire heritage."},
 {f:"🇲🇹",n:"Malta",cap:"Valletta",pop:"~540k",lang:"Maltese, English",cur:"Euro (EUR)",fact:"Strategic Mediterranean island nation."},
 {f:"🇲🇭",n:"Marshall Islands",cap:"Majuro",pop:"~40k",lang:"Marshallese, English",cur:"USD",fact:"Pacific island nation with US ties."},
 {f:"🇲🇷",n:"Mauritania",cap:"Nouakchott",pop:"~5 million",lang:"Arabic",cur:"Ouguiya (MRU)",fact:"Mostly desert country in West Africa."},
 {f:"🇲🇺",n:"Mauritius",cap:"Port Louis",pop:"~1.3 million",lang:"English, French",cur:"Rupee (MUR)",fact:"Indian Ocean island nation."},
 {f:"🇲🇽",n:"Mexico",cap:"Mexico City",pop:"~129 million",lang:"Spanish",cur:"Peso (MXN)",fact:"Home to ancient Aztec and Mayan civilizations."},
-
 {f:"🇫🇲",n:"Micronesia",cap:"Palikir",pop:"~110k",lang:"English",cur:"USD",fact:"Pacific island federation."},
 {f:"🇲🇩",n:"Moldova",cap:"Chișinău",pop:"~2.5 million",lang:"Romanian",cur:"Leu (MDL)",fact:"Eastern European wine-producing country."},
 {f:"🇲🇨",n:"Monaco",cap:"Monaco",pop:"~39k",lang:"French",cur:"Euro (EUR)",fact:"Second smallest country in the world."},
@@ -350,9 +324,7 @@ const COUNTRIES = [
 {f:"🇲🇪",n:"Montenegro",cap:"Podgorica",pop:"~620k",lang:"Montenegrin",cur:"Euro (EUR)",fact:"Balkan Adriatic country."},
 {f:"🇲🇦",n:"Morocco",cap:"Rabat",pop:"~37 million",lang:"Arabic, Berber",cur:"Dirham (MAD)",fact:"Gateway between Africa and Europe."},
 {f:"🇲🇿",n:"Mozambique",cap:"Maputo",pop:"~34 million",lang:"Portuguese",cur:"Metical (MZN)",fact:"Rich coastline along Indian Ocean."},
-
 {f:"🇲🇲",n:"Myanmar",cap:"Naypyidaw",pop:"~55 million",lang:"Burmese",cur:"Kyat (MMK)",fact:"Southeast Asian country with rich Buddhist heritage."},
-
 {f:"🇳🇦",n:"Namibia",cap:"Windhoek",pop:"~2.7 million",lang:"English",cur:"Dollar (NAD)",fact:"Home to Namib Desert."},
 {f:"🇳🇷",n:"Nauru",cap:"Yaren (de facto)",pop:"~12k",lang:"Nauruan, English",cur:"AUD",fact:"Smallest island nation in the world."},
 {f:"🇳🇵",n:"Nepal",cap:"Kathmandu",pop:"~30 million",lang:"Nepali",cur:"Rupee (NPR)",fact:"Home to Mount Everest."},
@@ -360,12 +332,10 @@ const COUNTRIES = [
 {f:"🇳🇿",n:"New Zealand",cap:"Wellington",pop:"~5.3 million",lang:"English, Māori",cur:"NZ Dollar (NZD)",fact:"Pacific island nation with strong ecology focus."},
 {f:"🇳🇮",n:"Nicaragua",cap:"Managua",pop:"~7 million",lang:"Spanish",cur:"Córdoba (NIO)",fact:"Largest Central American country."},
 {f:"🇳🇪",n:"Niger",cap:"Niamey",pop:"~27 million",lang:"French",cur:"CFA Franc (XOF)",fact:"Mostly desert Sahel country."},
-{f:"🇳🇬",n:"Nigeria",cap:"Abuja",pop:"~230 million",lang:"English",cur:"Naira (NGN)",fact:"Africa’s most populous country."},
+{f:"🇳🇬",n:"Nigeria",cap:"Abuja",pop:"~230 million",lang:"English",cur:"Naira (NGN)",fact:"Africa's most populous country."},
 {f:"🇲🇰",n:"North Macedonia",cap:"Skopje",pop:"~1.8 million",lang:"Macedonian",cur:"Denar (MKD)",fact:"Balkan country in Southeast Europe."},
 {f:"🇳🇴",n:"Norway",cap:"Oslo",pop:"~5.5 million",lang:"Norwegian",cur:"Krone (NOK)",fact:"Rich oil economy and fjords."},
-
 {f:"🇴🇲",n:"Oman",cap:"Muscat",pop:"~5.2 million",lang:"Arabic",cur:"Rial (OMR)",fact:"Strategic Gulf nation with long coastline."},
-
 {f:"🇵🇰",n:"Pakistan",cap:"Islamabad",pop:"~241 million",lang:"Urdu, English",cur:"Rupee (PKR)",fact:"Nuclear power and South Asian nation."},
 {f:"🇵🇼",n:"Palau",cap:"Ngerulmud",pop:"~18k",lang:"Palauan, English",cur:"USD",fact:"Pacific island nation."},
 {f:"🇵🇸",n:"Palestine",cap:"Ramallah / East Jerusalem",pop:"~5.5 million",lang:"Arabic",cur:"Shekel (ILS)",fact:"Observer state at UN."},
@@ -376,21 +346,17 @@ const COUNTRIES = [
 {f:"🇵🇭",n:"Philippines",cap:"Manila",pop:"~117 million",lang:"Filipino, English",cur:"Peso (PHP)",fact:"Archipelago of over 7,000 islands."},
 {f:"🇵🇱",n:"Poland",cap:"Warsaw",pop:"~38 million",lang:"Polish",cur:"Złoty (PLN)",fact:"Central European industrial economy."},
 {f:"🇵🇹",n:"Portugal",cap:"Lisbon",pop:"~10 million",lang:"Portuguese",cur:"Euro (EUR)",fact:"Oldest borders in Europe."},
-
 {f:"🇶🇦",n:"Qatar",cap:"Doha",pop:"~3 million",lang:"Arabic",cur:"Riyal (QAR)",fact:"One of the richest countries per capita."},
-
 {f:"🇷🇴",n:"Romania",cap:"Bucharest",pop:"~19 million",lang:"Romanian",cur:"Leu (RON)",fact:"Home of Dracula folklore."},
 {f:"🇷🇺",n:"Russia",cap:"Moscow",pop:"~144 million",lang:"Russian",cur:"Ruble (RUB)",fact:"Largest country by land area."},
 {f:"🇷🇼",n:"Rwanda",cap:"Kigali",pop:"~14 million",lang:"Kinyarwanda, English",cur:"Franc (RWF)",fact:"Known for rapid development and clean cities."},
-
 {f:"🇰🇳",n:"Saint Kitts and Nevis",cap:"Basseterre",pop:"~50k",lang:"English",cur:"XCD",fact:"Smallest country in the Americas."},
 {f:"🇱🇨",n:"Saint Lucia",cap:"Castries",pop:"~180k",lang:"English",cur:"XCD",fact:"Caribbean island nation."},
 {f:"🇻🇨",n:"Saint Vincent and the Grenadines",cap:"Kingstown",pop:"~110k",lang:"English",cur:"XCD",fact:"Volcanic island chain."},
-
 {f:"🇼🇸",n:"Samoa",cap:"Apia",pop:"~220k",lang:"Samoan, English",cur:"Tala (WST)",fact:"South Pacific island nation."},
-{f:"🇸🇲",n:"San Marino",cap:"San Marino",pop:"~34k",lang:"Italian",cur:"Euro (EUR)",fact:"One of the world’s oldest republics."},
+{f:"🇸🇲",n:"San Marino",cap:"San Marino",pop:"~34k",lang:"Italian",cur:"Euro (EUR)",fact:"One of the world's oldest republics."},
 {f:"🇸🇹",n:"São Tomé and Príncipe",cap:"São Tomé",pop:"~230k",lang:"Portuguese",cur:"Dobra (STN)",fact:"Gulf of Guinea island nation."},
-{f:"🇸🇦",n:"Saudi Arabia",cap:"Riyadh",pop:"~36 million",lang:"Arabic",cur:"Riyal (SAR)",fact:"World’s largest oil exporter."},
+{f:"🇸🇦",n:"Saudi Arabia",cap:"Riyadh",pop:"~36 million",lang:"Arabic",cur:"Riyal (SAR)",fact:"World's largest oil exporter."},
 {f:"🇸🇳",n:"Senegal",cap:"Dakar",pop:"~18 million",lang:"French",cur:"CFA Franc (XOF)",fact:"West African coastal democracy."},
 {f:"🇷🇸",n:"Serbia",cap:"Belgrade",pop:"~6.7 million",lang:"Serbian",cur:"Dinar (RSD)",fact:"Balkan crossroads nation."},
 {f:"🇸🇨",n:"Seychelles",cap:"Victoria",pop:"~100k",lang:"English, French",cur:"Rupee (SCR)",fact:"Indian Ocean luxury island nation."},
@@ -401,7 +367,7 @@ const COUNTRIES = [
 {f:"🇸🇧",n:"Solomon Islands",cap:"Honiara",pop:"~700k",lang:"English",cur:"SBD",fact:"Pacific island nation."},
 {f:"🇸🇴",n:"Somalia",cap:"Mogadishu",pop:"~18 million",lang:"Somali, Arabic",cur:"Shilling (SOS)",fact:"Horn of Africa coastal nation."},
 {f:"🇿🇦",n:"South Africa",cap:"Pretoria / Cape Town / Bloemfontein",pop:"~60 million",lang:"11 official",cur:"Rand (ZAR)",fact:"Three capital cities."},
-{f:"🇸🇸",n:"South Sudan",cap:"Juba",pop:"~11 million",lang:"English",cur:"Pound (SSP)",fact:"World’s newest country (2011)."},
+{f:"🇸🇸",n:"South Sudan",cap:"Juba",pop:"~11 million",lang:"English",cur:"Pound (SSP)",fact:"World's newest country (2011)."},
 {f:"🇪🇸",n:"Spain",cap:"Madrid",pop:"~48 million",lang:"Spanish",cur:"Euro (EUR)",fact:"Iberian Peninsula nation."},
 {f:"🇱🇰",n:"Sri Lanka",cap:"Colombo",pop:"~22 million",lang:"Sinhala, Tamil",cur:"Rupee (LKR)",fact:"Indian Ocean island nation."},
 {f:"🇸🇩",n:"Sudan",cap:"Khartoum",pop:"~48 million",lang:"Arabic, English",cur:"Pound (SDG)",fact:"Nile River country in northeast Africa."},
@@ -409,7 +375,6 @@ const COUNTRIES = [
 {f:"🇸🇪",n:"Sweden",cap:"Stockholm",pop:"~10.5 million",lang:"Swedish",cur:"Krona (SEK)",fact:"Nordic welfare state."},
 {f:"🇨🇭",n:"Switzerland",cap:"Bern",pop:"~8.8 million",lang:"German, French, Italian",cur:"CHF",fact:"Neutral country with strong banking sector."},
 {f:"🇸🇾",n:"Syria",cap:"Damascus",pop:"~23 million",lang:"Arabic",cur:"Pound (SYP)",fact:"One of the oldest continuously inhabited regions."},
-
 {f:"🇹🇼",n:"Taiwan",cap:"Taipei",pop:"~23 million",lang:"Mandarin",cur:"NT Dollar (TWD)",fact:"Global semiconductor leader."},
 {f:"🇹🇯",n:"Tajikistan",cap:"Dushanbe",pop:"~10 million",lang:"Tajik",cur:"Somoni (TJS)",fact:"Mountainous Central Asian country."},
 {f:"🇹🇿",n:"Tanzania",cap:"Dodoma",pop:"~67 million",lang:"Swahili, English",cur:"Shilling (TZS)",fact:"Home to Mount Kilimanjaro."},
@@ -422,57 +387,46 @@ const COUNTRIES = [
 {f:"🇹🇷",n:"Turkey",cap:"Ankara",pop:"~85 million",lang:"Turkish",cur:"Lira (TRY)",fact:"Bridge between Europe and Asia."},
 {f:"🇹🇲",n:"Turkmenistan",cap:"Ashgabat",pop:"~7 million",lang:"Turkmen",cur:"Manat (TMT)",fact:"Central Asian gas-rich country."},
 {f:"🇹🇻",n:"Tuvalu",cap:"Funafuti",pop:"~11k",lang:"Tuvaluan, English",cur:"AUD",fact:"One of the smallest countries in the world."},
-
 {f:"🇺🇬",n:"Uganda",cap:"Kampala",pop:"~48 million",lang:"English, Swahili",cur:"Shilling (UGX)",fact:"Known as the Pearl of Africa."},
 {f:"🇺🇦",n:"Ukraine",cap:"Kyiv",pop:"~36 million",lang:"Ukrainian",cur:"Hryvnia (UAH)",fact:"Largest country fully in Europe."},
 {f:"🇦🇪",n:"United Arab Emirates",cap:"Abu Dhabi",pop:"~10 million",lang:"Arabic",cur:"AED",fact:"Federation of 7 emirates."},
 {f:"🇬🇧",n:"United Kingdom",cap:"London",pop:"~68 million",lang:"English",cur:"GBP",fact:"Includes England, Scotland, Wales, Northern Ireland."},
-{f:"🇺🇸",n:"United States",cap:"Washington D.C.",pop:"~335 million",lang:"English",cur:"USD",fact:"World’s largest economy."},
+{f:"🇺🇸",n:"United States",cap:"Washington D.C.",pop:"~335 million",lang:"English",cur:"USD",fact:"World's largest economy."},
 {f:"🇺🇾",n:"Uruguay",cap:"Montevideo",pop:"~3.5 million",lang:"Spanish",cur:"Peso (UYU)",fact:"Stable South American democracy."},
 {f:"🇺🇿",n:"Uzbekistan",cap:"Tashkent",pop:"~36 million",lang:"Uzbek",cur:"Som (UZS)",fact:"Historic Silk Road country."},
-
 {f:"🇻🇺",n:"Vanuatu",cap:"Port Vila",pop:"~320k",lang:"Bislama, English, French",cur:"Vatu (VUV)",fact:"Pacific island nation prone to cyclones."},
 {f:"🇻🇦",n:"Vatican City",cap:"Vatican City",pop:"~800",lang:"Italian, Latin",cur:"Euro (EUR)",fact:"Smallest country in the world; center of Catholic Church."},
 {f:"🇻🇪",n:"Venezuela",cap:"Caracas",pop:"~28 million",lang:"Spanish",cur:"Bolívar (VES)",fact:"Oil-rich South American nation."},
 {f:"🇻🇳",n:"Vietnam",cap:"Hanoi",pop:"~100 million",lang:"Vietnamese",cur:"Dong (VND)",fact:"Fast-growing Southeast Asian economy."},
-
 {f:"🇾🇪",n:"Yemen",cap:"Sana'a",pop:"~34 million",lang:"Arabic",cur:"Rial (YER)",fact:"Arabian Peninsula country facing humanitarian crisis."},
-
 {f:"🇿🇲",n:"Zambia",cap:"Lusaka",pop:"~20 million",lang:"English",cur:"Kwacha (ZMW)",fact:"Landlocked Southern African country."},
 {f:"🇿🇼",n:"Zimbabwe",cap:"Harare",pop:"~16 million",lang:"English, Shona, Ndebele",cur:"ZiG / USD",fact:"Known for Victoria Falls."}
 ];
 const BRANDS = [
- 
   {l:"N",c:"#111",n:"Nike",t:"Just Do It",i:"Sportswear",m:"Founded 1964 · USA · Greek goddess of victory"},
   {l:"A",c:"#555",n:"Apple",t:"Think Different",i:"Technology",m:"Founded 1976 · Cupertino · Jobs, Wozniak, Wayne"},
   {l:"M",c:"#D62300",n:"McDonald's",t:"I'm Lovin' It",i:"Fast Food",m:"Founded 1940 · Golden Arches"},
   {l:"A",c:"#FF9900",n:"Amazon",t:"Work Hard. Have Fun. Make History.",i:"E-commerce",m:"Founded 1994 · Jeff Bezos"},
   {l:"T",c:"#0F2D52",n:"Tata",t:"Leadership with Trust",i:"Conglomerate",m:"India · Founded 1868"},
   {l:"S",c:"#1428A0",n:"Samsung",t:"Do What You Can't",i:"Electronics",m:"South Korea · Meaning: three stars"},
-  
   {l:"C",c:"#E4002B",n:"Coca-Cola",t:"Taste the Feeling",i:"Beverages",m:"1886 · USA · World's most recognized brand"},
   {l:"M",c:"#EB001B",n:"Mastercard",t:"There Are Some Things Money Can't Buy",i:"Payments",m:"Global payment network"},
   {l:"V",c:"#1A1F71",n:"Visa",t:"Everywhere You Want to Be",i:"Payments",m:"Global payment network"},
   {l:"R",c:"#002654",n:"Red Bull",t:"Gives You Wings",i:"Energy Drink",m:"Austria-Thailand · extreme sports marketing"},
-  
   {l:"B",c:"#1C69D4",n:"BMW",t:"The Ultimate Driving Machine",i:"Automotive",m:"Germany · premium cars"},
   {l:"M",c:"#333",n:"Mercedes-Benz",t:"The Best or Nothing",i:"Automotive",m:"Germany · luxury cars"},
   {l:"T",c:"#EB0A1E",n:"Toyota",t:"Let's Go Places",i:"Automotive",m:"Japan · world's largest automaker"},
   {l:"A",c:"#BB0A30",n:"Audi",t:"Vorsprung durch Technik",i:"Automotive",m:"Germany · Four rings = merged companies"},
-  
   {l:"L",c:"#000",n:"L'Oréal",t:"Because You're Worth It",i:"Cosmetics",m:"France · beauty giant"},
   {l:"M",c:"#E91E63",n:"Maybelline",t:"Maybe She's Born With It",i:"Cosmetics",m:"USA · makeup brand"},
-  
   {l:"N",c:"#124191",n:"Nokia",t:"Connecting People",i:"Telecom",m:"Finland · started as paper mill"},
   {l:"I",c:"#0068B5",n:"Intel",t:"Intel Inside",i:"Semiconductors",m:"USA · chipmaker"},
-  
   {l:"S",c:"#008C15",n:"Subway",t:"Eat Fresh",i:"Fast Food",m:"USA · sandwich chain"},
   {l:"K",c:"#A6192E",n:"KFC",t:"Finger Lickin' Good",i:"Fast Food",m:"USA · Colonel Sanders"},
-  
   {l:"A",c:"#F1C40F",n:"Adobe",t:"Creativity for All",i:"Software",m:"USA · Photoshop, Illustrator, Express"},
   {l:"I",c:"#000",n:"IBM",t:"Think",i:"Technology",m:"USA · enterprise computing pioneer"},
-  {l:"G",c:"#4285F4",n:"Google",t:"Don't Be Evil",i:"Technology",m:"Search giant · Alphabet parent"},];
-
+  {l:"G",c:"#4285F4",n:"Google",t:"Don't Be Evil",i:"Technology",m:"Search giant · Alphabet parent"},
+];
 const FLASHCARDS = [
   ["Currency of the UAE?","UAE Dirham (AED)"],["UN headquarters city?","New York, USA"],
   ["First Arab country to reach Mars?","UAE (Hope Probe, 2021 arrival)"],["Brent vs WTI — what are they?","Crude-oil price benchmarks (global vs US)"],
@@ -481,7 +435,6 @@ const FLASHCARDS = [
   ["World's tallest building?","Burj Khalifa, Dubai (828 m)"],["IMF headquarters?","Washington D.C., USA"],
   ["Founder of SpaceX?","Elon Musk (2002)"],["UAE National Day?","2 December (Union Day, 1971)"],
 ];
-
 const MUN_TIPS = [
   "<b>GSL (General Speakers List):</b> your prepared 60–90 second country-position speech — open with policy, end with a call to action.",
   "<b>Moderated caucus:</b> short timed speeches on one sub-topic. Raise your placard with a specific sub-topic + time split ready.",
@@ -492,436 +445,222 @@ const MUN_TIPS = [
   "<b>Quote sources:</b> citing UN reports, Reuters or official data instantly raises your credibility in committee.",
   "<b>The 3-point rule:</b> every speech needs max three points — one strong stat, one policy stance, one proposal.",
 ];
+/* ================= GENERAL KNOWLEDGE BANK (original questions) ================= */
+const GK_BANK = [
+  {q:"Which planet is known as the Red Planet?",opts:["Venus","Mars","Jupiter","Mercury"],a:"Mars",cat:"Science"},
+  {q:"What is the largest ocean on Earth?",opts:["Atlantic","Indian","Arctic","Pacific"],a:"Pacific",cat:"Geography"},
+  {q:"How many continents are there on Earth?",opts:["5","6","7","8"],a:"7",cat:"Geography"},
+  {q:"Which gas do plants mainly absorb for photosynthesis?",opts:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],a:"Carbon dioxide",cat:"Science"},
+  {q:"Who painted the Mona Lisa?",opts:["Michelangelo","Leonardo da Vinci","Raphael","Vincent van Gogh"],a:"Leonardo da Vinci",cat:"Arts"},
+  {q:"What is the smallest prime number?",opts:["0","1","2","3"],a:"2",cat:"Maths"},
+  {q:"Which country is home to the kangaroo?",opts:["Brazil","South Africa","Australia","India"],a:"Australia",cat:"Geography"},
+  {q:"What is the chemical symbol for gold?",opts:["Gd","Go","Au","Ag"],a:"Au",cat:"Science"},
+  {q:"Which is the longest river in the world?",opts:["Amazon","Nile","Yangtze","Mississippi"],a:"Nile",cat:"Geography"},
+  {q:"How many players are on a standard football (soccer) team on the pitch?",opts:["9","10","11","12"],a:"11",cat:"Sport"},
+  {q:"Which language has the most native speakers worldwide?",opts:["English","Hindi","Spanish","Mandarin Chinese"],a:"Mandarin Chinese",cat:"General"},
+  {q:"What is the hardest known natural material?",opts:["Quartz","Diamond","Titanium","Granite"],a:"Diamond",cat:"Science"},
+  {q:"Which organ pumps blood through the human body?",opts:["Liver","Lungs","Heart","Kidney"],a:"Heart",cat:"Science"},
+  {q:"In which city would you find the Colosseum?",opts:["Athens","Rome","Cairo","Istanbul"],a:"Rome",cat:"History"},
+  {q:"What is the currency of Japan?",opts:["Yuan","Won","Yen","Ringgit"],a:"Yen",cat:"General"},
+  {q:"Which scientist developed the theory of general relativity?",opts:["Isaac Newton","Niels Bohr","Albert Einstein","Galileo"],a:"Albert Einstein",cat:"Science"},
+  {q:"How many sides does a hexagon have?",opts:["5","6","7","8"],a:"6",cat:"Maths"},
+  {q:"Which is the largest land animal?",opts:["Hippopotamus","African elephant","Rhinoceros","Giraffe"],a:"African elephant",cat:"Nature"},
+  {q:"What is the capital of Canada?",opts:["Toronto","Vancouver","Ottawa","Montreal"],a:"Ottawa",cat:"Geography"},
+  {q:"Who wrote the play 'Romeo and Juliet'?",opts:["Charles Dickens","William Shakespeare","Jane Austen","Mark Twain"],a:"William Shakespeare",cat:"Arts"},
+  {q:"What does 'HTTP' stand for?",opts:["HyperText Transfer Protocol","High Transfer Text Process","Hyperlink Text Transfer Path","Home Tool Transfer Protocol"],a:"HyperText Transfer Protocol",cat:"Tech"},
+  {q:"Which vitamin is produced when skin is exposed to sunlight?",opts:["Vitamin A","Vitamin B12","Vitamin C","Vitamin D"],a:"Vitamin D",cat:"Science"},
+  {q:"The Great Wall is located in which country?",opts:["Japan","China","Mongolia","Korea"],a:"China",cat:"Geography"},
+  {q:"How many strings does a standard guitar have?",opts:["4","5","6","7"],a:"6",cat:"Arts"},
+  {q:"Which metal is liquid at room temperature?",opts:["Mercury","Lead","Iron","Aluminium"],a:"Mercury",cat:"Science"},
+  {q:"What is the tallest mountain above sea level?",opts:["K2","Mount Everest","Kangchenjunga","Makalu"],a:"Mount Everest",cat:"Geography"},
+  {q:"Which festival is known as the Festival of Lights in India?",opts:["Holi","Diwali","Eid","Pongal"],a:"Diwali",cat:"Culture"},
+  {q:"What is the freezing point of water in Celsius?",opts:["-10°C","0°C","10°C","32°C"],a:"0°C",cat:"Science"},
+  {q:"Who was the first person to walk on the Moon?",opts:["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","Michael Collins"],a:"Neil Armstrong",cat:"History"},
+  {q:"Which country has the most time zones?",opts:["Russia","USA","China","France"],a:"France",cat:"Geography"},
+  {q:"What is the main ingredient in traditional Japanese sushi?",opts:["Noodles","Rice","Potato","Bread"],a:"Rice",cat:"Food"},
+  {q:"How many colours are there in a rainbow?",opts:["5","6","7","8"],a:"7",cat:"Science"},
+  {q:"Which is the smallest planet in our solar system?",opts:["Mars","Mercury","Venus","Pluto"],a:"Mercury",cat:"Science"},
+  {q:"Which sport is associated with Wimbledon?",opts:["Golf","Tennis","Cricket","Rowing"],a:"Tennis",cat:"Sport"},
+  {q:"What is the largest desert in the world?",opts:["Sahara","Gobi","Antarctic Desert","Arabian"],a:"Antarctic Desert",cat:"Geography"},
+  {q:"Which element has the chemical symbol 'O'?",opts:["Osmium","Oxygen","Gold","Oganesson"],a:"Oxygen",cat:"Science"},
+  {q:"In computing, what does 'CPU' stand for?",opts:["Central Process Unit","Central Processing Unit","Computer Personal Unit","Core Processing Utility"],a:"Central Processing Unit",cat:"Tech"},
+  {q:"Which country gifted the Statue of Liberty to the USA?",opts:["United Kingdom","France","Italy","Spain"],a:"France",cat:"History"},
+  {q:"What is the study of weather called?",opts:["Geology","Meteorology","Astrology","Ecology"],a:"Meteorology",cat:"Science"},
+  {q:"How many minutes are there in a full day?",opts:["1200","1440","1660","2400"],a:"1440",cat:"Maths"},
+  {q:"Which animal is known as the 'Ship of the Desert'?",opts:["Horse","Camel","Donkey","Llama"],a:"Camel",cat:"Nature"},
+  {q:"What is the national flower of Japan?",opts:["Rose","Lotus","Cherry blossom","Tulip"],a:"Cherry blossom",cat:"Culture"},
+  {q:"Which planet has the most prominent ring system?",opts:["Jupiter","Saturn","Uranus","Neptune"],a:"Saturn",cat:"Science"},
+  {q:"Who is known as the 'Father of the Computer'?",opts:["Alan Turing","Charles Babbage","Bill Gates","Tim Berners-Lee"],a:"Charles Babbage",cat:"Tech"},
+  {q:"What is the largest internal organ in the human body?",opts:["Heart","Liver","Lungs","Stomach"],a:"Liver",cat:"Science"},
+  {q:"Which ancient wonder still stands today?",opts:["Hanging Gardens","Colossus of Rhodes","Great Pyramid of Giza","Lighthouse of Alexandria"],a:"Great Pyramid of Giza",cat:"History"},
+  {q:"Which country is famous for the tango dance?",opts:["Brazil","Spain","Argentina","Mexico"],a:"Argentina",cat:"Culture"},
+  {q:"What is the powerhouse of the cell?",opts:["Nucleus","Ribosome","Mitochondria","Cytoplasm"],a:"Mitochondria",cat:"Science"},
+  {q:"How many degrees are in a right angle?",opts:["45","90","180","360"],a:"90",cat:"Maths"},
+  {q:"Which is the most spoken official language in the United Nations?",opts:["French","Arabic","English","Russian"],a:"English",cat:"General"},
+  {q:"What sport uses terms like 'birdie' and 'eagle'?",opts:["Tennis","Cricket","Golf","Baseball"],a:"Golf",cat:"Sport"},
+  {q:"Which sea is the saltiest in the world?",opts:["Red Sea","Dead Sea","Caspian Sea","Black Sea"],a:"Dead Sea",cat:"Geography"},
+  {q:"What is the primary language spoken in Brazil?",opts:["Spanish","Portuguese","French","English"],a:"Portuguese",cat:"General"},
+  {q:"Which blood type is known as the universal donor?",opts:["AB+","O-","A+","B-"],a:"O-",cat:"Science"},
+  {q:"In which country were the Olympic Games first held?",opts:["Italy","Greece","Egypt","China"],a:"Greece",cat:"History"},
+  {q:"Which is the fastest land animal?",opts:["Lion","Cheetah","Horse","Greyhound"],a:"Cheetah",cat:"Nature"},
+  {q:"What is H2O more commonly known as?",opts:["Salt","Water","Hydrogen","Acid"],a:"Water",cat:"Science"},
+  {q:"Which company developed the iPhone?",opts:["Samsung","Google","Apple","Nokia"],a:"Apple",cat:"Tech"},
+  {q:"How many bones are in the adult human body?",opts:["186","206","226","246"],a:"206",cat:"Science"},
+  {q:"Which continent is the Sahara Desert located in?",opts:["Asia","Africa","Australia","South America"],a:"Africa",cat:"Geography"},
+];
+
+/* ================= QUESTION OF THE DAY ================= */
+const PTS_QOTD = 15;
+function dayStamp(d){ d=d||new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function qotdPick(){
+  // deterministic per calendar day → same question for everyone that day
+  const stamp=dayStamp();
+  let h=0; for(let i=0;i<stamp.length;i++){ h=(h*31+stamp.charCodeAt(i))>>>0; }
+  const base=GK_BANK[h % GK_BANK.length];
+  // stable option order seeded by the day too
+  const opts=[...base.opts].sort((a,b)=>(((h+a.length)%7)-((h+b.length)%7)));
+  return {...base,opts};
+}
+function qotdDone(){ const s=storeLoad(); return s.qotd && s.qotd.date===dayStamp(); }
+function renderQOTD(){
+  const host=document.getElementById("qotd"); if(!host) return;
+  const q=qotdPick();
+  const s=storeLoad();
+  const already=qotdDone();
+  if(already){
+    const wasRight=s.qotd.correct;
+    host.innerHTML=`<div class="qotd-head">🗓️ Question of the Day · ${monthLabel(monthKey()).split(" ")[0]} ${new Date().getDate()}</div>
+      <div class="qtext">${esc(q.q)}</div>
+      <div class="qotd-done ${wasRight?"good":"bad"}">${wasRight?"✓ You got it — ":"Answer: "}<b>${esc(q.a)}</b>. ${wasRight?"+"+PTS_QOTD+" points banked.":"Come back tomorrow for a new one."}</div>
+      <div class="score">Same question for everyone today · resets at midnight</div>`;
+    return;
+  }
+  host.innerHTML=`<div class="qotd-head">🗓️ Question of the Day · ${q.cat}</div>
+    <div class="qtext">${esc(q.q)}</div>
+    ${q.opts.map((o,i)=>`<button class="opt" data-o="${esc(o)}" onclick="answerQOTD(this)">${esc(o)}</button>`).join("")}
+    <div class="score">Answer once a day for +${PTS_QOTD} points${getPlayer()?"":" — set a name to bank it"}</div>`;
+}
+function answerQOTD(btn){
+  const q=qotdPick(); const chosen=btn.dataset.o; const correct=(chosen===q.a);
+  document.querySelectorAll("#qotd .opt").forEach(b=>{ b.disabled=true; if(b.dataset.o===q.a) b.classList.add("correct"); });
+  if(!correct) btn.classList.add("wrong");
+  const s=storeLoad(); s.qotd={date:dayStamp(),correct}; storeSave();
+  if(correct) award({correct:1,answered:1,points:PTS_QOTD}); else award({answered:1});
+  setTimeout(renderQOTD,1100);
+}
+
+/* ================= STATS + LEADERBOARD (per-device, localStorage) ================= */
+const STORE_KEY = "knowhub_v1";
+const PTS_CORRECT = 10, PTS_REVISE = 1;
+let MEM = null;
+function storeLoad(){
+  if(MEM) return MEM;
+  try{ MEM = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ MEM = null; }
+  if(!MEM || typeof MEM!=="object") MEM = {player:"", months:{}};
+  if(!MEM.months) MEM.months = {};
+  return MEM;
+}
+function storeSave(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(MEM)); }catch(e){} }
+function monthKey(d){ d=d||new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0"); }
+function monthLabel(k){ const p=k.split("-"); return new Date(+p[0],+p[1]-1,1).toLocaleDateString(undefined,{month:"long",year:"numeric"}); }
+function getPlayer(){ return storeLoad().player || ""; }
+function setPlayer(name){ const s=storeLoad(); s.player=(name||"").trim().slice(0,24); storeSave(); }
+function row(mk,name){
+  const s=storeLoad();
+  if(!s.months[mk]) s.months[mk]={};
+  if(!s.months[mk][name]) s.months[mk][name]={points:0,quizzes:0,correct:0,answered:0,revised:0,best:0};
+  return s.months[mk][name];
+}
+function award(d){
+  const name=getPlayer(); if(!name) return false;
+  const r=row(monthKey(),name);
+  for(const k in d){ if(k==="best") r.best=Math.max(r.best,d[k]); else r[k]=(r[k]||0)+d[k]; }
+  storeSave(); refreshChips(); if(curPage==="board") renderBoard(); return true;
+}
+function myStats(){ const n=getPlayer(); if(!n) return null; return row(monthKey(),n); }
+
+/* ================= REVISE / CRAM POOL ================= */
+function catLabel(tag){ return {uae:"UAE",world:"World",tech:"Sci-Tech",econ:"Economy"}[tag]||tag; }
+function buildRevisePool(){
+  const pool=[];
+  FLASHCARDS.forEach(([q,a])=>pool.push({q,a,cat:"GK"}));
+  TICKER_FACTS.forEach(([k,v])=>pool.push({q:k+" — ?",a:v,cat:"GK"}));
+  BRANDS.forEach(b=>pool.push({q:"Tagline of "+b.n+"?",a:"“"+b.t+"” — "+b.i,cat:"Brands"}));
+  Object.values(NEWS_SEED).flat().forEach(n=>pool.push({q:n.h,a:n.p,cat:catLabel(n.tag)}));
+  return pool;
+}
+const REVISE_POOL = buildRevisePool();
+const REVISE_CATS = ["All",...Array.from(new Set(REVISE_POOL.map(x=>x.cat)))];
+let cram = {list:[], i:0, revealed:false, cat:"All", auto:null, doneIds:new Set()};
+
+function cramStart(catName){
+  if(cram.auto){ clearInterval(cram.auto); cram.auto=null; }
+  cram.cat = catName || cram.cat;
+  cram.list = REVISE_POOL.filter(x=>cram.cat==="All"||x.cat===cram.cat).sort(()=>Math.random()-.5);
+  cram.i=0; cram.revealed=false; cram.doneIds=new Set();
+  renderCram();
+}
+function cramReveal(){
+  if(cram.revealed) return;
+  cram.revealed=true;
+  const card=cram.list[cram.i];
+  const id=cram.cat+"|"+card.q;
+  if(!cram.doneIds.has(id)){ cram.doneIds.add(id); award({revised:1, points:PTS_REVISE}); }
+  renderCram();
+}
+function cramNext(step){
+  cram.i = (cram.i + (step||1) + cram.list.length) % cram.list.length;
+  cram.revealed=false; renderCram();
+}
+function cramAuto(btn){
+  if(cram.auto){ clearInterval(cram.auto); cram.auto=null; btn.textContent="▶ Auto-play"; return; }
+  btn.textContent="⏸ Stop";
+  cram.auto=setInterval(()=>{
+    if(!cram.revealed) cramReveal();
+    else cramNext(1);
+  },2600);
+}
+function renderCram(){
+  const stage=document.getElementById("cram-stage"); if(!stage) return;
+  if(!cram.list.length){ stage.innerHTML='<p class="lede">No cards in this set.</p>'; return; }
+  const c=cram.list[cram.i];
+  const pct=Math.round(((cram.i+1)/cram.list.length)*100);
+  stage.innerHTML=`
+    <div class="cram-bar"><i style="width:${pct}%"></i></div>
+    <div class="cram-cat">${esc(c.cat)} · card ${cram.i+1} of ${cram.list.length}</div>
+    <div class="cram-q">${esc(c.q)}</div>
+    <div class="cram-a ${cram.revealed?'show':''}">${esc(c.a)}</div>
+    <div class="cram-ctl">
+      ${cram.revealed
+        ? `<button class="btn" onclick="cramNext(1)">Next →</button>
+           <button class="btn ghost" onclick="cramNext(-1)">← Back</button>`
+        : `<button class="btn" onclick="cramReveal()">Reveal answer</button>
+           <button class="btn ghost" onclick="cramReveal();cramNext(1)">Skip →</button>`}
+      <span class="cram-count">${cram.doneIds.size} revised this session</span>
+    </div>`;
+}
 
 /* ================= QUIZ (taglines + GK) ================= */
 function buildQuiz(){
-  const qs = [];
-  const shuffled = [...BRANDS].sort(()=>Math.random()-.5).slice(0,6);
+  const qs=[];
+  const shuffled=[...BRANDS].sort(()=>Math.random()-.5).slice(0,4);
   shuffled.forEach(b=>{
-    const wrong = BRANDS.filter(x=>x.n!==b.n).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.n);
+    const wrong=BRANDS.filter(x=>x.n!==b.n).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.n);
     qs.push({q:`Which brand uses the tagline “${b.t}”?`,opts:[b.n,...wrong].sort(()=>Math.random()-.5),a:b.n});
   });
-  const gk = [
-    {q:"Which two cities host the IMF and the UN HQ respectively?",opts:["Geneva & Paris","Washington D.C. & New York","London & Vienna","New York & Geneva"],a:"Washington D.C. & New York"},
-    {q:"OPEC is headquartered in…",opts:["Riyadh","Vienna","Geneva","Abu Dhabi"],a:"Vienna"},
-    {q:"The 'UAE Consensus' was agreed at which summit?",opts:["G20 Delhi","COP28 Dubai","COP27 Egypt","Davos"],a:"COP28 Dubai"},
-    {q:"Chandrayaan-3 belongs to which space agency?",opts:["NASA","JAXA","ISRO","ESA"],a:"ISRO"},
-  ];
-  return [...qs,...gk].sort(()=>Math.random()-.5);
+  // randomized general-knowledge questions from the bank
+  const gkPick=[...GK_BANK].sort(()=>Math.random()-.5).slice(0,6).map(g=>({q:g.q,opts:[...g.opts].sort(()=>Math.random()-.5),a:g.a}));
+  return [...qs,...gkPick].sort(()=>Math.random()-.5);
 }
 let QUIZ=[],qIdx=0,qScore=0;
-
-/* ================= LIVE NEWS — works ANYWHERE =================
-   ★ EASIEST RELIABLE FIX → get a free GNews key (takes ~1 minute):
-        1. Go to  https://gnews.io  →  "Sign up" (free, no card)
-        2. Copy the API key from your dashboard
-        3. Paste it below:  const GNEWS_KEY = "your_key_here";
-        4. Reload → "Fetch latest news" → done. Talks straight to your
-           browser, no proxy, no blocking. Free tier ≈ 100 fetches/day.
-
-   The rest below (Worker / rss2json / proxies) are automatic fallbacks
-   if you don't set a key. */
-
-/* 👇 PASTE YOUR FREE GNEWS KEY HERE (recommended) */
-const GNEWS_KEY = "bd245b1f9f36367f851cf03028f2369d";
-
-/* 👇 OR a Cloudflare Worker URL (bulletproof, see worker.js). Optional. */
-const WORKER_URL = "https://knowhub-news.smgokul23.workers.dev/";
-
-/* GNews query plan — UAE prioritised, world mixed in */
-const GNEWS_PLAN = {
-  daily:[["search",'UAE OR Dubai OR "Abu Dhabi" OR "India UAE"'],["top","world"]],
-  uae:[["search",'UAE OR Dubai OR "Abu Dhabi" OR Sharjah OR Emirates']],
-  world:[["top","world"]],
-  tech:[["search",'ISRO OR NASA OR SpaceX OR "artificial intelligence" OR robotics']],
-  econ:[["search",'oil OR OPEC OR inflation OR economy OR "stock market"']],
-};
-function gnewsURL(kind,q){
-  const base="https://gnews.io/api/v4/";
-  if(kind==="top") return `${base}top-headlines?category=${encodeURIComponent(q)}&lang=en&max=8&apikey=${GNEWS_KEY}`;
-  return `${base}search?q=${encodeURIComponent(q)}&lang=en&max=8&sortby=publishedAt&apikey=${GNEWS_KEY}`;
-}
-async function gnewsOne(kind,q){
-  const r = await fetch(gnewsURL(kind,q));
-  if(!r.ok){
-    let msg = "GNews HTTP "+r.status;
-    try{ const e = await r.json(); if(e.errors) msg += " — "+e.errors.join("; "); }catch{}
-    throw new Error(msg);
-  }
-  const j = await r.json();
-  if(!Array.isArray(j.articles) || !j.articles.length) throw new Error("GNews returned no articles");
-  return j.articles.map(a=>({
-    title:a.title, description:a.description||a.content||"",
-    link:a.url, pubDate:a.publishedAt, source:a.source && a.source.name,
-  }));
-}
-async function fetchViaGNews(cat){
-  const specs = GNEWS_PLAN[cat] || GNEWS_PLAN.daily;
-  const per = specs.length > 1 ? 3 : 6;
-  const res = await Promise.allSettled(specs.map(([k,q])=>gnewsOne(k,q)));
-  const cards = [];
-  res.forEach(r=>{ if(r.status==="fulfilled") r.value.slice(0,per).forEach(it=>cards.push(itemToCard(it,cat))); });
-  if(!cards.length){
-    const firstErr = res.find(r=>r.status==="rejected");
-    throw new Error(firstErr ? firstErr.reason.message : "GNews failed");
-  }
-  return cards;
-}
-
-const GN = q => `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-AE&gl=AE&ceid=AE:en`;
-const WORLD_TOP = "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en";
-const RSS_FEEDS = {
-  daily:[GN('UAE OR "United Arab Emirates" OR "India UAE" when:3d'), WORLD_TOP],
-  uae:[GN('UAE OR Dubai OR "Abu Dhabi" OR Sharjah when:3d')],
-  world:[WORLD_TOP],
-  tech:[GN('ISRO OR NASA OR SpaceX OR "artificial intelligence" OR robotics when:7d')],
-  econ:[GN('"oil prices" OR OPEC OR IMF OR RBI OR "stock market" OR inflation when:7d')],
-};
-
-/* --- normalize any source into {title,description,link,pubDate} --- */
-function parseXMLItems(xml){
-  const doc = new DOMParser().parseFromString(xml,"text/xml");
-  return [...doc.querySelectorAll("item")].map(it=>({
-    title: it.querySelector("title")?.textContent || "",
-    description: it.querySelector("description")?.textContent || "",
-    link: it.querySelector("link")?.textContent || "",
-    pubDate: it.querySelector("pubDate")?.textContent || "",
-  })).filter(x=>x.title);
-}
-/* each strategy: takes feed URL, returns array of normalized items (or throws) */
-const STRATEGIES = [
-  ...(WORKER_URL ? [async url=>{ // YOUR worker (returns parsed JSON {items:[...]})
-    const r = await fetch(`${WORKER_URL}?url=${encodeURIComponent(url)}`);
-    if(!r.ok) throw new Error("worker HTTP "+r.status);
-    const j = await r.json();
-    const items = j.items || parseXMLItems(j.contents||"");
-    if(!items.length) throw new Error("worker empty");
-    return items;
-  }] : []),
-  async url=>{ // rss2json
-    const r = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=10`);
-    if(!r.ok) throw new Error("rss2json HTTP "+r.status);
-    const j = await r.json();
-    if(j.status!=="ok" || !Array.isArray(j.items) || !j.items.length) throw new Error("rss2json no items");
-    return j.items;
-  },
-  async url=>{ // allorigins (JSON-wrapped)
-    const r = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
-    if(!r.ok) throw new Error("allorigins HTTP "+r.status);
-    const j = await r.json();
-    const items = parseXMLItems(j.contents||"");
-    if(!items.length) throw new Error("allorigins empty");
-    return items;
-  },
-  async url=>{ // corsproxy.io (raw)
-    const r = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(url)}`);
-    if(!r.ok) throw new Error("corsproxy HTTP "+r.status);
-    const items = parseXMLItems(await r.text());
-    if(!items.length) throw new Error("corsproxy empty");
-    return items;
-  },
-];
-async function fetchRSS(url){
-  let lastErr;
-  for(const strat of STRATEGIES){
-    try{ const items = await strat(url); if(items.length) return items; }
-    catch(e){ lastErr = e; }
-  }
-  throw lastErr || new Error("all strategies failed");
-}
-function upscTag(t){
-  t = (t||"").toLowerCase();
-  if(/isro|nasa|spacex|artificial intelligence|\bai\b|satellite|vaccine|quantum|robot|chip|semiconductor/.test(t)) return "GS-III: Science & Tech";
-  if(/climate|cop\d|emission|environment|wildlife|flood|heatwave|biodiversity|monsoon/.test(t)) return "GS-III: Environment";
-  if(/oil|opec|inflation|\brbi\b|imf|gdp|trade|market|economy|bank|tariff|tax|rupee|fdi/.test(t)) return "GS-III: Economy";
-  if(/election|parliament|treaty|summit|united nations|\bun\b|minister|diplomat|sanction|border|ceasefire|bilateral|cepa/.test(t)) return "GS-II: Polity & IR";
-  return "Prelims: current-affairs fact";
-}
-function fmtDate(d){
-  if(!d) return "";
-  const t = Date.parse(d);
-  if(isNaN(t)) return String(d).slice(0,16);
-  return new Date(t).toLocaleDateString(undefined,{day:"numeric",month:"short"});
-}
-function itemToCard(item, cat){
-  const raw = (item.title||"Untitled").trim();
-  const cut = raw.lastIndexOf(" - ");
-  // GNews provides item.source directly; Google News RSS bakes it into the title after " - "
-  const h = (item.source ? raw : (cut > 0 ? raw.slice(0,cut) : raw));
-  const srcName = item.source || (cut > 0 ? raw.slice(cut+3) : "News");
-  const url = item.link || "";
-  const date = fmtDate(item.pubDate);
-  let p = String(item.description||"")
-            .replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/&[a-z]+;/g," ").replace(/\s+/g," ").trim();
-  if(!p || p.length < 40 || p.slice(0,30) === h.slice(0,30)) p = "";
-  if(p.length > 230) p = p.slice(0,227) + "…";
-  return {tag:cat, h, p, x:upscTag(raw+" "+p), s:"🔴 Live · "+srcName+(date?" · "+date:""), url};
-}
-async function fetchViaRSS(cat){
-  const feeds = RSS_FEEDS[cat];
-  const per = feeds.length > 1 ? 3 : 6;
-  const results = await Promise.allSettled(feeds.map(fetchRSS));
-  const cards = [];
-  results.forEach(r=>{
-    if(r.status==="fulfilled") r.value.slice(0,per).forEach(it=>cards.push(itemToCard(it,cat)));
-  });
-  if(!cards.length) throw new Error("all feeds failed");
-  return cards;
-}
-
-/* ---- Claude AI fallback (only works when this page runs inside claude.ai) ---- */
-const SOURCE_HINTS = {
-  daily:"PRIORITY ORDER: (1) UAE news first — Gulf News, UAE government, India–UAE relations, Gulf/GCC affairs; (2) then major world news — Reuters, UN, Times of India coverage. Pick at least 2 UAE/Gulf items and 3 world items. Topics must be UPSC-relevant.",
-  uae:"Gulf News, Reuters and UAE government announcements — TOP-PRIORITY category. Topics: UAE policy, India–UAE relations (CEPA, diaspora), Gulf diplomacy, UAE economy & energy, climate, UAE space programme.",
-  world:"Reuters, UN reports, Times of India. Topics: geopolitics, elections, UN resolutions, climate summits, India's foreign relations — UPSC GS-II International Relations staples.",
-  tech:"MIT Technology Review, NASA, SpaceX, ISRO. Topics: AI & regulation, space missions, medical breakthroughs, energy tech — UPSC GS-III Science & Tech.",
-  econ:"Financial Times, Reuters. Topics: oil prices (Brent/WTI — UAE & India relevance), RBI/central banks, inflation, trade, IMF/World Bank/WTO — UPSC GS-III Economy.",
-};
-async function fetchViaClaude(cat){
-  const prompt = `You are the current-affairs engine of a knowledge hub for UPSC aspirants, school quizzers and MUN delegates.
-Search the web for the 5 most important CURRENT news items in this category: ${SOURCE_HINTS[cat]}
-Prefer the named sources. Summarize in your own words (never copy text).
-Respond with ONLY a JSON array, no markdown fences. Each item:
-{"h":"headline (max 10 words)","p":"2-3 line summary in your own words","w":"one line: why it matters / likely question angle","x":"UPSC exam angle e.g. 'Mains GS-II: India-UAE relations'","s":"source + month/year"}`;
-  const r = await fetch("https://api.anthropic.com/v1/messages",{
-    method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,
-      messages:[{role:"user",content:prompt}],
-      tools:[{type:"web_search_20250305",name:"web_search"}]})
-  });
-  const data = await r.json();
-  const text = (data.content||[]).map(i=>i.type==="text"?i.text:"").join("\n").replace(/```json|```/g,"").trim();
-  const arr = JSON.parse(text.slice(text.indexOf("["), text.lastIndexOf("]")+1));
-  return arr.map(it=>({tag:cat,h:it.h,p:it.p,w:it.w,x:it.x,s:"🔴 Live · AI · "+(it.s||"web")}));
-}
-
-async function fetchLive(cat, btn){
-  const status = document.getElementById("status-"+cat);
-  const spin = document.getElementById("spin-"+cat);
-  const wrap = document.getElementById("live-"+cat);
-  btn.disabled = true; spin.style.display="inline-block";
-  status.textContent = "Pulling live headlines…";
-  let cards = null, mode = "", reasons = [];
-
-  // 1. GNews (direct, no proxy) — only if a key is set
-  if(GNEWS_KEY){
-    try{ cards = await fetchViaGNews(cat); mode = "GNews"; }
-    catch(e){ reasons.push("GNews: "+e.message); }
-  }
-  // 2. Worker / rss2json / public proxies
-  if(!cards){
-    try{ cards = await fetchViaRSS(cat); mode = WORKER_URL ? "Worker/RSS" : "public RSS proxy"; }
-    catch(e){ reasons.push("RSS: "+e.message); }
-  }
-  // 3. Claude AI web search (claude.ai only)
-  if(!cards){
-    status.textContent = "Trying AI mode…";
-    try{ cards = await fetchViaClaude(cat); mode = "Claude AI"; }
-    catch(e){ reasons.push("AI: "+e.message); }
-  }
-
-  if(cards){
-    wrap.innerHTML = cards.map(newsCard).join("");
-    status.textContent = `Updated ${new Date().toLocaleTimeString()} · via ${mode}`;
-  }else{
-    console.error(reasons.join(" | "));
-    status.textContent = "Live feed unavailable.";
-    wrap.innerHTML = `<div class="card b-econ">
-      <h3>Live feed couldn't load</h3>
-      <p>The free public news proxies are being rate-limited right now — that's why it keeps failing. The one-minute fix is a free GNews key, which talks straight to your browser with no proxy at all:</p>
-      <div class="why" style="margin-top:10px"><b>Fix:</b> sign up free at <a href="https://gnews.io" target="_blank" rel="noopener">gnews.io</a>, copy your key, and paste it into <code>const GNEWS_KEY = ""</code> near the top of this file's &lt;script&gt;. Reload and it'll work every time.</div>
-      <div class="src" style="margin-top:10px">Tech detail: ${esc(reasons.join(" · ")||"network blocked")}</div>
-    </div>`;
-  }
-  btn.disabled = false; spin.style.display = "none";
-}
-
-/* ---- Country lookup: REST Countries API (free, no key, CORS-friendly) with Claude fallback ---- */
-async function lookupCountry(){
-  const inp = document.getElementById("country-q");
-  const name = inp.value.trim(); if(!name) return;
-  const out = document.getElementById("country-ai");
-  out.innerHTML = `<div class="card b-country"><p>Looking up ${esc(name)}…</p></div>`;
-  try{
-    const r = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(name)}?fields=name,flag,capital,population,languages,currencies,region,subregion,unMember,area`);
-    if(!r.ok) throw new Error("not found");
-    const d = (await r.json())[0];
-    const cur = Object.entries(d.currencies||{}).map(([code,c])=>`${c.name} (${code})`).join(", ") || "—";
-    out.innerHTML = countryCard({
-      f:d.flag||"🌍", n:d.name.common,
-      cap:(d.capital||["—"]).join(", "),
-      pop:"~"+Number(d.population).toLocaleString("en"),
-      lang:Object.values(d.languages||{}).join(", ")||"—",
-      cur,
-      fact:`${d.subregion||d.region}${d.unMember?" · UN member state":""} · Area ${Math.round(d.area).toLocaleString("en")} km²`
-    }, true);
-  }catch(e){
-    try{
-      const r = await fetch("https://api.anthropic.com/v1/messages",{
-        method:"POST",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,
-          messages:[{role:"user",content:`Give a country fact card for "${name}". Respond ONLY with JSON, no fences:
-{"f":"flag emoji","n":"name","cap":"capital","pop":"approx population","lang":"language(s)","cur":"currency (code)","fact":"one quiz-worthy fact in your own words"}`}]})
-      });
-      const data = await r.json();
-      const text = (data.content||[]).map(i=>i.type==="text"?i.text:"").join("");
-      out.innerHTML = countryCard(JSON.parse(text.replace(/```json|```/g,"").trim()), true);
-    }catch(e2){
-      out.innerHTML = `<div class="card b-country"><p>Couldn't find that country — check the spelling and try again.</p></div>`;
-    }
-  }
-}
-
-/* ================= RENDER HELPERS ================= */
-const esc = s => String(s).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-function newsCard(c){
-  const labels={daily:"UPSC Daily",uae:"UAE",world:"World",tech:"Sci-Tech",econ:"Economy"};
-  const examChip = c.x ? `<div class="why" style="background:rgba(192,132,252,.10);border-left-color:var(--tech);color:#D8C2F5;margin-top:8px"><b style="color:var(--tech)">📌 UPSC angle:</b> ${esc(c.x)}</div>` : "";
-  const whyRow = c.w ? `<div class="why"><b>Why it matters:</b> ${esc(c.w)}</div>` : "";
-  const link = c.url ? ` · <a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">Read full story ↗</a>` : "";
-  return `<article class="card b-${c.tag==='daily'?'quiz':c.tag}"><span class="tag t-${c.tag==='daily'?'quiz':c.tag}">${labels[c.tag]||c.tag}</span>
-  <h3>${esc(c.h)}</h3>${c.p?`<p>${esc(c.p)}</p>`:""}
-  ${whyRow}
-  ${examChip}
-  <div class="src">${esc(c.s)}${link}</div></article>`;
-}
-function countryCard(c, live=false){
-  return `<article class="card b-country cc"><div class="flag">${c.f||"🌍"}</div>
-  <h3>${esc(c.n)} ${live?'<span class="tag t-country">AI lookup</span>':""}</h3>
-  <table>
-    <tr><td>Capital</td><td>${esc(c.cap)}</td></tr>
-    <tr><td>Population</td><td>${esc(c.pop)}</td></tr>
-    <tr><td>Language</td><td>${esc(c.lang)}</td></tr>
-    <tr><td>Currency</td><td>${esc(c.cur)}</td></tr>
-  </table>
-  <div class="why"><b>Know this:</b> ${esc(c.fact)}</div></article>`;
-}
-function fetchBar(cat){
-  return `<div class="fetchbar">
-    <span class="info">🔴 <b>Live mode</b> — fetches real headlines (UAE prioritised) with UPSC GS-paper tags. For reliable, block-free results add a free <a href="https://gnews.io" target="_blank" rel="noopener">GNews</a> key (see top of the script).</span>
-    <span class="status" id="status-${cat}"></span>
-    <div class="spinner" id="spin-${cat}"></div>
-    <button class="btn" onclick="fetchLive('${cat}',this)">Fetch latest news</button>
-  </div><div class="grid cols-3" id="live-${cat}" style="margin-bottom:22px"></div>`;
-}
-function newsPage(cat, title, lede){
-  return `<div class="eyebrow">Current Affairs</div><h1>${title}</h1><p class="lede">${lede}</p>
-  ${fetchBar(cat)}
-  <h2>Curated foundation cards</h2>
-  <div class="grid cols-3">${NEWS_SEED[cat].map(newsCard).join("")}</div>`;
-}
-
-/* ================= PAGES ================= */
-const PAGES = {
-  home: () => `
-    <div class="eyebrow">Digital Knowledge Hub</div>
-    <h1>One hub for current affairs,<br>quizzing & MUN prep.</h1>
-    <p class="lede">Card-based summaries — never long paragraphs. Every story carries a “why it matters”, every fact is built for fast recall. Live news is pulled and summarized by AI from your trusted source list.</p>
-    <div class="hub">
-      ${[["daily","📋","UPSC Daily Brief","UAE-first exam feed with GS-paper mapping on every story.","t-quiz"],
-        ["uae","🇦🇪","UAE Current Affairs","Government, space, climate & national milestones.","t-uae"],
-        ["world","🌍","World Current Affairs","Geopolitics, UN, elections & global events.","t-world"],
-        ["tech","🔬","Science & Technology","AI, NASA, SpaceX, ISRO, medicine & energy.","t-tech"],
-        ["econ","💰","Economy & Business","Oil trends, markets, companies & central banks.","t-econ"],
-        ["countries","🗺️","Country Information","Fact cards: capitals, currencies, key history.","t-country"],
-        ["brands","🏷️","Brands & Taglines","Company logos-style cards + tagline quiz bank.","t-econ"],
-        ["quiz","🎓","Quiz & MUN","Flashcards, rapid-fire quiz & debate skills.","t-quiz"],
-        ["sources","📚","Sources","Where every fact comes from, and how it's used.","t-world"]]
-        .map(([id,ico,h,p])=>`<button class="hub-tile" onclick="go('${id}')"><span class="ico">${ico}</span><h3>${h}</h3><p>${p}</p><span class="go">OPEN →</span></button>`).join("")}
-    </div>`,
-
-  uae: () => newsPage("uae","UAE Current Affairs","From federation facts to COP28 and the Hope Probe — everything UAE a quizzer needs, in cards."),
-
-  daily: () => `
-    <div class="eyebrow">For Civil Services Aspirants</div><h1>UPSC Daily Brief</h1>
-    <p class="lede">One mixed feed, exam-curated: UAE & Gulf headlines first (India–UAE relations, CEPA, energy), then the world stories most likely to surface in Prelims or Mains. Every live card carries a 📌 GS-paper mapping.</p>
-    ${fetchBar("daily")}
-    <h2>How news maps to the UPSC syllabus</h2>
-    <div class="grid cols-4">
-      <article class="card b-quiz"><span class="tag t-quiz">GS-I</span><h3>History · Geography · Society</h3><p>Heritage news, demographic reports, urbanisation, monsoon & disaster geography.</p></article>
-      <article class="card b-world"><span class="tag t-world">GS-II</span><h3>Polity · Governance · IR</h3><p>Constitutional issues, govt schemes, India–UAE/Gulf ties, UN resolutions, summits & treaties.</p></article>
-      <article class="card b-econ"><span class="tag t-econ">GS-III</span><h3>Economy · Sci-Tech · Environment</h3><p>RBI policy, oil & trade, ISRO missions, AI regulation, COP outcomes, internal security.</p></article>
-      <article class="card b-tech"><span class="tag t-tech">GS-IV + Prelims</span><h3>Ethics & Fact Bank</h3><p>Case-study material from governance news; one-line facts (places, indices, reports) for Prelims recall.</p></article>
-    </div>
-    <h2>Why UAE news matters for UPSC</h2>
-    <ul class="tips">
-      <li><b>CEPA (2022):</b> India–UAE Comprehensive Economic Partnership Agreement — India's first CEPA in the region; a recurring GS-II/GS-III theme.</li>
-      <li><b>Energy security:</b> the UAE is among India's top crude suppliers and a strategic-petroleum-reserve partner.</li>
-      <li><b>Diaspora:</b> ~3.5 million Indians in the UAE — remittances, labour reforms and consular issues are standard Mains fodder.</li>
-      <li><b>I2U2 & West Asia:</b> the India–Israel–UAE–USA grouping and UAE's BRICS entry are favourite Prelims questions.</li>
-      <li><b>Climate diplomacy:</b> COP28's 'UAE Consensus' on transitioning from fossil fuels is quotable in any environment answer.</li>
-    </ul>`,
-  world: () => newsPage("world","World Current Affairs","Geopolitics decoded: the UN system, global groupings and the frameworks behind the headlines."),
-  tech: () => newsPage("tech","Science & Technology","AI, space missions, medicine, robotics and energy — the fastest-moving quiz category."),
-  econ: () => newsPage("econ","Economy & Business","Oil, markets, institutions and Big Tech — the mechanics behind every business headline."),
-
-  countries: () => `
-    <div class="eyebrow">World Atlas</div><h1>Country Information</h1>
-    <p class="lede">Identity cards for key nations — capital, population, language, currency and one quiz-worthy fact. Use the AI lookup for any country not listed.</p>
-    <div class="searchrow">
-      <input id="country-q" placeholder="Type any country… e.g. Indonesia" onkeydown="if(event.key==='Enter')lookupCountry()">
-      <button class="btn" onclick="lookupCountry()">AI lookup</button>
-    </div>
-    <div class="grid cols-3" id="country-ai" style="margin-bottom:22px"></div>
-    <div class="grid cols-3">${COUNTRIES.map(c=>countryCard(c)).join("")}</div>`,
-
-  brands: () => `
-    <div class="eyebrow">Brand Bank</div><h1>Companies, Logos & Taglines</h1>
-    <p class="lede">The most-asked branding questions in school quizzes: who says what, founded when, and by whom.</p>
-    <div class="note">ℹ️ Logos are shown as colour monograms (real logos are trademarked artwork). The brand colour + initial is itself a great memory hook for quizzes.</div>
-    <div class="grid cols-3">${BRANDS.map(b=>`
-      <article class="card b-econ"><div class="brand">
-        <div class="mono" style="background:${b.c}">${b.l}</div>
-        <div><h3>${b.n}</h3><div class="tagline">“${b.t}”</div>
-        <span class="tag t-econ">${b.i}</span><div class="meta">${b.m}</div></div>
-      </div></article>`).join("")}</div>`,
-
-  quiz: () => `
-    <div class="eyebrow">Revision Engine</div><h1>Quiz & MUN</h1>
-    <p class="lede">Flip the flashcards, run the rapid-fire round (taglines + GK mixed in random order), then sharpen your committee skills.</p>
-    <h2>⚡ Flashcards — tap to flip</h2>
-    <div class="grid cols-4">${FLASHCARDS.map((f,i)=>`
-      <div class="flash" onclick="this.classList.toggle('flipped')" id="fl${i}">
-        <div class="flash-inner">
-          <div class="flash-face flash-front">${f[0]}<span class="hint">TAP</span></div>
-          <div class="flash-face flash-back">${f[1]}</div>
-        </div></div>`).join("")}</div>
-    <h2>🎯 Rapid-fire quiz</h2>
-    <div class="qz" id="qzbox"></div>
-    <h2>🏛️ MUN skill drill</h2>
-    <ul class="tips">${MUN_TIPS.map(t=>`<li>${t}</li>`).join("")}</ul>`,
-
-  sources: () => `
-    <div class="eyebrow">Transparency</div><h1>Sources & Method</h1>
-    <p class="lede">Every fact on this hub is summarized — never copied — from verified educational and news platforms.</p>
-    <h2>📰 News</h2><div class="srcgrid">
-      ${[["Gulf News","UAE & Gulf coverage"],["The Times of India","India & South Asia"],["Reuters","Global wire reference"],["Financial Times","Business & markets"]].map(([n,d])=>`<div class="card b-world"><h3>${n}</h3><p>${d}</p></div>`).join("")}</div>
-    <h2>🎓 Educational GK</h2><div class="srcgrid">
-      ${[["GKToday","Exam-oriented general knowledge"],["Jagran Josh","Current-affairs revision"]].map(([n,d])=>`<div class="card b-quiz"><h3>${n}</h3><p>${d}</p></div>`).join("")}</div>
-    <h2>🌍 International & Science</h2><div class="srcgrid">
-      ${[["United Nations","Official reports & frameworks"],["NASA","Mission updates"],["SpaceX","Launch & Starship updates"],["MIT Technology Review","AI & deep-tech insight"]].map(([n,d])=>`<div class="card b-tech"><h3>${n}</h3><p>${d}</p></div>`).join("")}</div>
-    <h2>🧠 How sources are used</h2>
-    <ul class="tips">
-      <li><b>Summarized, not copied</b> — every card is rewritten in plain student language.</li>
-      <li><b>Simplified for learning</b> — 2–4 line limits force clarity.</li>
-      <li><b>Categorized</b> — every item lands in exactly one learning section with a colour tag.</li>
-      <li><b>Live mode</b> — the AI fetch buttons search the open web, prioritising the sources above, and return fresh summaries (not scraped text).</li>
-    </ul>`,
-};
-
-/* ================= NAV / BOOT ================= */
-const NAV = [["home","Home"],["daily","UPSC Daily"],["uae","UAE"],["world","World"],["tech","Sci-Tech"],["econ","Economy"],["countries","Countries"],["brands","Brands"],["quiz","Quiz & MUN"],["sources","Sources"]];
-function go(id){
-  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="pg-"+id));
-  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
-  if(id==="quiz") startQuiz();
-  window.scrollTo({top:0});
-}
 function startQuiz(){ QUIZ=buildQuiz(); qIdx=0; qScore=0; renderQ(); }
 function renderQ(){
   const box=document.getElementById("qzbox"); if(!box) return;
   if(qIdx>=QUIZ.length){
-    box.innerHTML=`<div class="qno">ROUND COMPLETE</div><div class="qtext">You scored ${qScore} / ${QUIZ.length} ${qScore>=QUIZ.length*0.7?"🏆 Quiz-team material!":"— run it again, repetition is recall."}</div><button class="btn" onclick="startQuiz()">Play again (new questions)</button>`;
+    award({quizzes:1, best:qScore});
+    box.innerHTML=`<div class="qno">ROUND COMPLETE</div><div class="qtext">You scored ${qScore} / ${QUIZ.length} ${qScore>=QUIZ.length*0.7?"🏆 Quiz-team material!":"— run it again, repetition is recall."}</div>
+      <div class="score">${getPlayer()?("Points added to "+esc(getPlayer())+"'s month total."):"Tip: set a name on the Leaderboard page to bank your points."}</div>
+      <button class="btn" onclick="startQuiz()" style="margin-top:14px">Play again (new questions)</button>`;
     return;
   }
   const q=QUIZ[qIdx];
@@ -933,27 +672,412 @@ function renderQ(){
 function answer(btn,i){
   const q=QUIZ[qIdx];
   const correctIdx=q.opts.indexOf(q.a);
-  document.querySelectorAll(".qz .opt").forEach(b=>{
-    b.disabled=true;
-    if(+b.dataset.i===correctIdx) b.classList.add("correct");
-  });
-  if(i===correctIdx) qScore++; else btn.classList.add("wrong");
+  document.querySelectorAll(".qz .opt").forEach(b=>{ b.disabled=true; if(+b.dataset.i===correctIdx) b.classList.add("correct"); });
+  if(i===correctIdx){ qScore++; award({correct:1,answered:1,points:PTS_CORRECT}); }
+  else { btn.classList.add("wrong"); award({answered:1}); }
   setTimeout(()=>{qIdx++;renderQ();},900);
 }
 
+/* ================= LIVE NEWS (GNews → Worker/RSS → AI) ================= */
+const GNEWS_KEY = "bd245b1f9f36367f851cf03028f2369d";
+const WORKER_URL = "https://knowhub-news.smgokul23.workers.dev/";
+
+/* What each section's "Fetch latest" targets (shown to the user) */
+const FOCUS = {
+  daily:"UPSC current affairs from PIB & AIR News only — official government press releases & bulletins.",
+  uae:"UAE only: government, economy, energy, space and national news from the Emirates.",
+  world:"Global affairs: geopolitics, the UN, elections, summits and treaties.",
+  tech:"Latest inventions & breakthroughs plus space missions (ISRO, NASA, SpaceX).",
+  econ:"Markets & money: oil/OPEC, RBI & central banks, inflation, trade and big companies.",
+};
+
+/* Each plan entry is a GNews request:
+   {type:"search", q} OR {type:"top", category, country?} */
+const GNEWS_PLAN = {
+  daily:[
+    {type:"search", q:'India (policy OR scheme OR "Supreme Court" OR Parliament OR bilateral OR summit OR governance)'},
+    {type:"top", category:"world", country:"in"},
+  ],
+  uae:[
+    {type:"top", country:"ae"},
+    {type:"search", q:'UAE OR Dubai OR "Abu Dhabi" OR Sharjah OR Ajman OR "United Arab Emirates"'},
+  ],
+  world:[
+    {type:"top", category:"world"},
+  ],
+  tech:[
+    {type:"search", q:'(ISRO OR NASA OR SpaceX OR "space mission" OR satellite OR rocket OR astronaut)'},
+    {type:"search", q:'("new invention" OR breakthrough OR "new technology" OR "scientific discovery" OR "artificial intelligence" OR robotics)'},
+  ],
+  econ:[
+    {type:"top", category:"business"},
+    {type:"search", q:'(oil OR OPEC OR inflation OR RBI OR rupee OR "stock market" OR "interest rate")'},
+  ],
+};
+function gnewsURL(spec){
+  const base="https://gnews.io/api/v4/";
+  if(spec.type==="top"){
+    let u=`${base}top-headlines?category=${encodeURIComponent(spec.category||"general")}&lang=en&max=8`;
+    if(spec.country) u+=`&country=${encodeURIComponent(spec.country)}`;
+    return u+`&apikey=${GNEWS_KEY}`;
+  }
+  return `${base}search?q=${encodeURIComponent(spec.q)}&lang=en&max=8&sortby=publishedAt&apikey=${GNEWS_KEY}`;
+}
+async function gnewsFetchJSON(target){
+  const tries=[];
+  if(WORKER_URL) tries.push(WORKER_URL.replace(/\/+$/,"")+"?url="+encodeURIComponent(target)); // via your worker (no CORS)
+  tries.push(target); // direct (works only if GNews allows CORS)
+  let last;
+  for(const u of tries){
+    try{
+      const r=await fetch(u);
+      if(!r.ok){ last=new Error("HTTP "+r.status); continue; }
+      const j=await r.json();
+      if(j && Array.isArray(j.articles)) return j;
+      if(j && j.errors) { last=new Error(j.errors.join("; ")); continue; }
+      last=new Error("no articles");
+    }catch(e){ last=new Error(e.message==="Failed to fetch"?"blocked (CORS/network)":e.message); }
+  }
+  throw last||new Error("GNews unreachable");
+}
+async function gnewsOne(spec){
+  const j=await gnewsFetchJSON(gnewsURL(spec));
+  return j.articles.map(a=>({title:a.title,description:a.description||a.content||"",link:a.url,pubDate:a.publishedAt,source:a.source&&a.source.name}));
+}
+function dedupeCards(cards){
+  const seen=new Set(), out=[];
+  for(const c of cards){ const k=(c.h||"").toLowerCase().slice(0,60); if(seen.has(k)) continue; seen.add(k); out.push(c); }
+  return out;
+}
+async function fetchViaGNews(cat){
+  const specs=GNEWS_PLAN[cat]||GNEWS_PLAN.daily;
+  const per=specs.length>1?3:6;
+  const res=await Promise.allSettled(specs.map(s=>gnewsOne(s)));
+  let cards=[];
+  res.forEach(r=>{ if(r.status==="fulfilled") r.value.slice(0,per).forEach(it=>cards.push(itemToCard(it,cat))); });
+  cards=dedupeCards(cards);
+  if(!cards.length){ const e=res.find(r=>r.status==="rejected"); throw new Error(e?e.reason.message:"GNews failed"); }
+  return cards;
+}
+const GN=q=>`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-IN&gl=IN&ceid=IN:en`;
+const WORLD_TOP="https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en";
+const RSS_FEEDS={
+  daily:[GN('India (policy OR scheme OR Supreme Court OR Parliament OR bilateral OR summit) when:3d'), GN('"India UAE" OR Gulf when:5d')],
+  uae:[GN('UAE OR Dubai OR "Abu Dhabi" OR Sharjah when:3d')],
+  world:[WORLD_TOP],
+  tech:[GN('ISRO OR NASA OR SpaceX OR satellite OR rocket OR "space mission" when:7d'), GN('invention OR breakthrough OR "new technology" OR "artificial intelligence" when:7d')],
+  econ:[GN('oil OR OPEC OR RBI OR inflation OR "stock market" OR rupee when:7d')],
+};
+function parseXMLItems(xml){
+  const doc=new DOMParser().parseFromString(xml,"text/xml");
+  return [...doc.querySelectorAll("item")].map(it=>({
+    title:it.querySelector("title")?.textContent||"",description:it.querySelector("description")?.textContent||"",
+    link:it.querySelector("link")?.textContent||"",pubDate:it.querySelector("pubDate")?.textContent||"",
+  })).filter(x=>x.title);
+}
+const STRATEGIES=[
+  ...(WORKER_URL?[async url=>{ const r=await fetch(`${WORKER_URL}?url=${encodeURIComponent(url)}`); if(!r.ok) throw new Error("worker HTTP "+r.status); const j=await r.json(); const items=j.items||parseXMLItems(j.contents||""); if(!items.length) throw new Error("worker empty"); return items; }]:[]),
+  async url=>{ const r=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=10`); if(!r.ok) throw new Error("rss2json HTTP "+r.status); const j=await r.json(); if(j.status!=="ok"||!Array.isArray(j.items)||!j.items.length) throw new Error("rss2json no items"); return j.items; },
+  async url=>{ const r=await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`); if(!r.ok) throw new Error("allorigins HTTP "+r.status); const j=await r.json(); const items=parseXMLItems(j.contents||""); if(!items.length) throw new Error("allorigins empty"); return items; },
+  async url=>{ const r=await fetch(`https://corsproxy.io/?url=${encodeURIComponent(url)}`); if(!r.ok) throw new Error("corsproxy HTTP "+r.status); const items=parseXMLItems(await r.text()); if(!items.length) throw new Error("corsproxy empty"); return items; },
+];
+async function fetchRSS(url){ let last; for(const s of STRATEGIES){ try{ const it=await s(url); if(it.length) return it; }catch(e){ last=e; } } throw last||new Error("all strategies failed"); }
+function upscTag(t){
+  t=(t||"").toLowerCase();
+  if(/isro|nasa|spacex|artificial intelligence|\bai\b|satellite|vaccine|quantum|robot|chip|semiconductor/.test(t)) return "GS-III: Science & Tech";
+  if(/climate|cop\d|emission|environment|wildlife|flood|heatwave|biodiversity|monsoon/.test(t)) return "GS-III: Environment";
+  if(/oil|opec|inflation|\brbi\b|imf|gdp|trade|market|economy|bank|tariff|tax|rupee|fdi/.test(t)) return "GS-III: Economy";
+  if(/election|parliament|treaty|summit|united nations|\bun\b|minister|diplomat|sanction|border|ceasefire|bilateral|cepa/.test(t)) return "GS-II: Polity & IR";
+  return "Prelims: current-affairs fact";
+}
+function fmtDate(d){ if(!d) return ""; const t=Date.parse(d); if(isNaN(t)) return String(d).slice(0,16); return new Date(t).toLocaleDateString(undefined,{day:"numeric",month:"short"}); }
+function itemToCard(item,cat){
+  const raw=(item.title||"Untitled").trim();
+  const cut=raw.lastIndexOf(" - ");
+  const h=(item.source?raw:(cut>0?raw.slice(0,cut):raw));
+  const srcName=item.source||(cut>0?raw.slice(cut+3):"News");
+  const url=item.link||"";
+  const date=fmtDate(item.pubDate);
+  let p=String(item.description||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/&[a-z]+;/g," ").replace(/\s+/g," ").trim();
+  if(!p||p.length<40||p.slice(0,30)===h.slice(0,30)) p="";
+  if(p.length>230) p=p.slice(0,227)+"…";
+  return {tag:cat,h,p,x:upscTag(raw+" "+p),s:"🔴 Live · "+srcName+(date?" · "+date:""),url};
+}
+async function fetchViaRSS(cat){
+  const feeds=RSS_FEEDS[cat]; const per=feeds.length>1?3:6;
+  const results=await Promise.allSettled(feeds.map(fetchRSS));
+  let cards=[];
+  results.forEach(r=>{ if(r.status==="fulfilled") r.value.slice(0,per).forEach(it=>cards.push(itemToCard(it,cat))); });
+  cards=dedupeCards(cards);
+  if(!cards.length) throw new Error("all feeds failed");
+  return cards;
+}
+const SOURCE_HINTS={
+  daily:"UPSC-relevant Indian current affairs: governance, government schemes & policy, Supreme Court/Parliament, international relations (esp. India–UAE/Gulf), economy reports, environment summits, and major world affairs.",
+  uae:"UAE & Gulf: government policy, India–UAE (CEPA, diaspora), Gulf diplomacy, energy, climate, space.",
+  world:"Global affairs: geopolitics, UN resolutions, elections, climate summits, India's foreign relations.",
+  tech:"Latest inventions and scientific breakthroughs, plus space missions — ISRO, NASA, SpaceX, satellites, AI and robotics.",
+  econ:"Markets & money: oil/OPEC, RBI & central banks, inflation, trade deals, IMF/World Bank/WTO, big companies.",
+};
+async function fetchViaClaude(cat){
+  const prompt=`You are the current-affairs engine of a knowledge hub for UPSC aspirants, quizzers and MUN delegates.
+Search the web for the 5 most important CURRENT news items in: ${SOURCE_HINTS[cat]}
+Summarize in your own words. Respond with ONLY a JSON array, no fences. Each item:
+{"h":"headline (max 10 words)","p":"2-3 line summary","w":"why it matters / likely question angle","x":"UPSC exam angle","s":"source + month/year"}`;
+  const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}],tools:[{type:"web_search_20250305",name:"web_search"}]})});
+  const data=await r.json();
+  const text=(data.content||[]).map(i=>i.type==="text"?i.text:"").join("\n").replace(/```json|```/g,"").trim();
+  const arr=JSON.parse(text.slice(text.indexOf("["),text.lastIndexOf("]")+1));
+  return arr.map(it=>({tag:cat,h:it.h,p:it.p,w:it.w,x:it.x,s:"🔴 Live · AI · "+(it.s||"web")}));
+}
+async function fetchViaCA(cat,sources){
+  if(!WORKER_URL) throw new Error("no worker deployed");
+  const q=sources?("?sources="+encodeURIComponent(sources)):"?";
+  const r=await fetch(WORKER_URL.replace(/\/+$/,"")+"/ca"+q+"&_="+Date.now(),{cache:"no-store"});
+  if(!r.ok) throw new Error("CA HTTP "+r.status);
+  const j=await r.json();
+  if(!Array.isArray(j.items)||!j.items.length) throw new Error("no items returned");
+  return dedupeCards(j.items.map(it=>itemToCard({title:it.title,description:it.summary||it.description||"",link:it.link,pubDate:it.pubDate,source:it.source||"PIB"},cat)));
+}
+async function fetchLive(cat,btn){
+  const status=document.getElementById("status-"+cat), spin=document.getElementById("spin-"+cat), wrap=document.getElementById("live-"+cat);
+  btn.disabled=true; spin.style.display="inline-block"; status.textContent="Pulling live headlines…";
+  let cards=null,mode="",reasons=[];
+
+  if(cat==="daily"){
+    // UPSC = PIB + AIR News ONLY (no GNews, no world mixing)
+    try{ cards=await fetchViaCA(cat,"pib,air"); mode="PIB + AIR News"; }catch(e){ reasons.push("PIB/AIR: "+e.message); }
+  } else {
+    if(GNEWS_KEY){ try{ cards=await fetchViaGNews(cat); mode="GNews"; }catch(e){ reasons.push("GNews: "+e.message); } }
+    if(!cards){ try{ cards=await fetchViaRSS(cat); mode=WORKER_URL?"Worker/RSS":"public RSS proxy"; }catch(e){ reasons.push("RSS: "+e.message); } }
+    if(!cards){ status.textContent="Trying AI mode…"; try{ cards=await fetchViaClaude(cat); mode="Claude AI"; }catch(e){ reasons.push("AI: "+e.message); } }
+  }
+
+  if(cards){ wrap.innerHTML=cards.map(newsCard).join(""); status.textContent=`Updated ${new Date().toLocaleTimeString()} · via ${mode}`; }
+  else{
+    console.error(reasons.join(" | ")); status.textContent="Live feed unavailable.";
+    const tip = cat==="daily"
+      ? "UPSC mode pulls only from PIB & AIR News (via your worker). If this is empty, redeploy the worker or the govt site markup changed — ping to refresh the scraper."
+      : "News sources didn't respond. If you just edited the worker, make sure it's deployed.";
+    wrap.innerHTML=`<div class="card b-econ"><h3>Live feed couldn't load</h3><p>${tip}</p><div class="src" style="margin-top:10px">Tech detail: ${esc(reasons.join(" · ")||"network blocked")}</div></div>`;
+  }
+  btn.disabled=false; spin.style.display="none";
+}
+async function lookupCountry(){
+  const inp=document.getElementById("country-q"); const name=inp.value.trim(); if(!name) return;
+  const out=document.getElementById("country-ai");
+  out.innerHTML=`<div class="card b-country"><p>Looking up ${esc(name)}…</p></div>`;
+  try{
+    const r=await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(name)}?fields=name,flag,capital,population,languages,currencies,region,subregion,unMember,area`);
+    if(!r.ok) throw new Error("not found");
+    const d=(await r.json())[0];
+    const cur=Object.entries(d.currencies||{}).map(([code,c])=>`${c.name} (${code})`).join(", ")||"—";
+    out.innerHTML=countryCard({f:d.flag||"🌍",n:d.name.common,cap:(d.capital||["—"]).join(", "),pop:"~"+Number(d.population).toLocaleString("en"),lang:Object.values(d.languages||{}).join(", ")||"—",cur,fact:`${d.subregion||d.region}${d.unMember?" · UN member state":""} · Area ${Math.round(d.area).toLocaleString("en")} km²`},true);
+  }catch(e){
+    try{
+      const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:`Give a country fact card for "${name}". Respond ONLY with JSON, no fences:\n{"f":"flag emoji","n":"name","cap":"capital","pop":"approx population","lang":"language(s)","cur":"currency (code)","fact":"one quiz-worthy fact in your own words"}`}]})});
+      const data=await r.json();
+      const text=(data.content||[]).map(i=>i.type==="text"?i.text:"").join("");
+      out.innerHTML=countryCard(JSON.parse(text.replace(/```json|```/g,"").trim()),true);
+    }catch(e2){ out.innerHTML=`<div class="card b-country"><p>Couldn't find that country — check the spelling and try again.</p></div>`; }
+  }
+}
+
+/* ================= RENDER HELPERS ================= */
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+function newsCard(c){
+  const labels={daily:"UPSC Daily",uae:"UAE",world:"World",tech:"Sci-Tech",econ:"Economy"};
+  const examChip=c.x?`<div class="why" style="background:rgba(192,132,252,.10);border-left-color:var(--tech);color:#D8C2F5;margin-top:8px"><b style="color:var(--tech)">📌 UPSC angle:</b> ${esc(c.x)}</div>`:"";
+  const whyRow=c.w?`<div class="why"><b>Why it matters:</b> ${esc(c.w)}</div>`:"";
+  const link=c.url?` · <a href="${esc(c.url)}" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">Read full story ↗</a>`:"";
+  return `<article class="card b-${c.tag==='daily'?'quiz':c.tag}"><span class="tag t-${c.tag==='daily'?'quiz':c.tag}">${labels[c.tag]||c.tag}</span>
+  <h3>${esc(c.h)}</h3>${c.p?`<p>${esc(c.p)}</p>`:""}${whyRow}${examChip}
+  <div class="src">${esc(c.s)}${link}</div></article>`;
+}
+function countryCard(c,live){
+  return `<article class="card b-country cc"><div class="flag">${c.f||"🌍"}</div>
+  <h3>${esc(c.n)} ${live?'<span class="tag t-country">AI lookup</span>':""}</h3>
+  <table><tr><td>Capital</td><td>${esc(c.cap)}</td></tr><tr><td>Population</td><td>${esc(c.pop)}</td></tr><tr><td>Language</td><td>${esc(c.lang)}</td></tr><tr><td>Currency</td><td>${esc(c.cur)}</td></tr></table>
+  <div class="why"><b>Know this:</b> ${esc(c.fact)}</div></article>`;
+}
+function fetchBar(cat){
+  return `<div class="fetchbar"><span class="info">🔴 <b>Live mode</b> — ${FOCUS[cat]||"real headlines, with UPSC GS-paper tags."}</span>
+    <span class="status" id="status-${cat}"></span><div class="spinner" id="spin-${cat}"></div>
+    <button class="btn" onclick="fetchLive('${cat}',this)">Fetch latest news</button></div>
+    <div class="grid cols-3" id="live-${cat}" style="margin-bottom:22px"></div>`;
+}
+function newsPage(cat,title,lede){
+  return `<div class="eyebrow">Current Affairs</div><h1>${title}</h1><p class="lede">${lede}</p>${fetchBar(cat)}
+  <h2>Curated foundation cards</h2><div class="grid cols-3">${NEWS_SEED[cat].map(newsCard).join("")}</div>`;
+}
+/* player bar + chips (used on revise/quiz/board) */
+function chipHTML(){
+  const s=myStats();
+  if(!getPlayer()) return "";
+  return `<div class="chips">
+    <span class="chip">Points <b>${s.points}</b></span>
+    <span class="chip">Quizzes <b>${s.quizzes}</b></span>
+    <span class="chip">Accuracy <b>${s.answered?Math.round(s.correct/s.answered*100):0}%</b></span>
+    <span class="chip">Revised <b>${s.revised}</b></span></div>`;
+}
+function playerBarHTML(){
+  const name=getPlayer();
+  if(name) return `<div class="pbar" id="pbar"><span class="who">Revising as <b>${esc(name)}</b> · ${monthLabel(monthKey())}</span>
+    <button class="btn ghost" onclick="changeName()">Change name</button>${chipHTML()}</div>`;
+  return `<div class="pbar" id="pbar"><span class="who">Enter a name to bank your points:</span>
+    <input id="nameInput" placeholder="Your name" onkeydown="if(event.key==='Enter')saveName()">
+    <button class="btn" onclick="saveName()">Save</button></div>`;
+}
+function refreshChips(){ const bar=document.getElementById("pbar"); if(bar) bar.outerHTML=playerBarHTML(); }
+function saveName(){ const v=document.getElementById("nameInput").value.trim(); if(!v) return; setPlayer(v); refreshChips(); if(curPage==="board") renderBoard(); }
+function changeName(){ const cur=getPlayer(); const v=prompt("Enter your name (used on the leaderboard):", cur)||""; if(v.trim()){ setPlayer(v); refreshChips(); if(curPage==="board") renderBoard(); } }
+
+/* ================= LEADERBOARD ================= */
+let boardSort="points", boardMonth=null;
+function renderBoard(){
+  const host=document.getElementById("boardhost"); if(!host) return;
+  const s=storeLoad();
+  const months=Object.keys(s.months).sort().reverse();
+  if(!boardMonth || !s.months[boardMonth]) boardMonth = months[0] || monthKey();
+  const data=s.months[boardMonth]||{};
+  const me=getPlayer();
+  let rows=Object.entries(data).map(([name,r])=>({name,...r,acc:r.answered?Math.round(r.correct/r.answered*100):0}));
+  const keyMap={points:"points",correct:"correct",revised:"revised",quizzes:"quizzes",acc:"acc"};
+  rows.sort((a,b)=>b[keyMap[boardSort]]-a[keyMap[boardSort]] || b.points-a.points);
+  const monthSel=`<select id="bmonth" onchange="boardMonth=this.value;renderBoard()" style="background:var(--ink-3);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font-family:inherit">
+    ${months.map(m=>`<option value="${m}" ${m===boardMonth?"selected":""}>${monthLabel(m)}</option>`).join("")||`<option>${monthLabel(monthKey())}</option>`}</select>`;
+  const tabs=[["points","Points"],["correct","Correct"],["acc","Accuracy"],["revised","Revised"],["quizzes","Quizzes"]];
+  const medals=["🥇","🥈","🥉"];
+  let body = rows.length ? rows.map((r,i)=>`<tr class="${r.name===me?"me":""}">
+      <td class="rk">${i<3?`<span class="medal">${medals[i]}</span>`:("#"+(i+1))}</td>
+      <td class="nm">${esc(r.name)}</td><td>${r.points}</td><td>${r.correct}/${r.answered}</td>
+      <td>${r.acc}%</td><td>${r.revised}</td><td>${r.quizzes}</td></tr>`).join("")
+    : `<tr><td colspan="7" style="color:var(--muted);padding:20px">No scores yet this month. Take a quiz or run a cram session to get on the board.</td></tr>`;
+  host.innerHTML=`
+    <div class="sorttabs">${tabs.map(([k,l])=>`<button class="filterbtn ${boardSort===k?"active":""}" onclick="boardSort='${k}';renderBoard()">${l}</button>`).join("")} <span style="margin-left:auto">${monthSel}</span></div>
+    <table class="board"><thead><tr><th>Rank</th><th>Name</th><th>Points</th><th>Correct</th><th>Acc.</th><th>Revised</th><th>Quizzes</th></tr></thead><tbody>${body}</tbody></table>
+    <div class="note" style="margin-top:16px">🏆 Scoring: +${PTS_CORRECT} points per correct quiz answer · +${PTS_REVISE} per card revised. Scores are saved in this browser (per-device). ${rows.length?`<a href="#" onclick="resetMine();return false;">Reset my stats</a>`:""}</div>`;
+}
+function resetMine(){
+  const me=getPlayer(); if(!me) return;
+  if(!confirm("Reset "+me+"'s stats for "+monthLabel(boardMonth)+"?")) return;
+  const s=storeLoad(); if(s.months[boardMonth]) delete s.months[boardMonth][me]; storeSave(); refreshChips(); renderBoard();
+}
+
+/* ================= PAGES ================= */
+const PAGES={
+  home:()=>`
+    <div class="eyebrow">Digital Knowledge Hub</div>
+    <h1>One hub for current affairs,<br>quizzing & MUN prep.</h1>
+    <p class="lede">Card-based summaries — never long paragraphs. Every story carries a “why it matters”, every fact is built for fast recall. Cram before an event, then climb the monthly leaderboard.</p>
+    <div class="qotd-home" id="qotd-home"></div>
+    <div class="hub">
+      ${[["daily","📋","UPSC Daily Brief","UAE-first exam feed with GS-paper mapping."],
+        ["revise","⚡","Revise / Cram","Fast flip-through revision right before an event."],
+        ["board","🏆","Leaderboard","Monthly points, accuracy & cards revised."],
+        ["uae","🇦🇪","UAE Current Affairs","Government, space, climate & milestones."],
+        ["world","🌍","World Current Affairs","Geopolitics, UN, elections & events."],
+        ["tech","🔬","Science & Technology","AI, NASA, SpaceX, ISRO, energy."],
+        ["econ","💰","Economy & Business","Oil, markets, companies & banks."],
+        ["countries","🗺️","Country Information","Capitals, currencies, key facts."],
+        ["brands","🏷️","Brands & Taglines","Logo cards + tagline quiz bank."],
+        ["quiz","🎓","Quiz & MUN","Flashcards, rapid-fire & debate skills."],
+        ["sources","📚","Sources","Where every fact comes from."]]
+        .map(([id,ico,h,p])=>`<button class="hub-tile" onclick="go('${id}')"><span class="ico">${ico}</span><h3>${h}</h3><p>${p}</p><span class="go">OPEN →</span></button>`).join("")}
+    </div>`,
+  revise:()=>`
+    <div class="eyebrow">Last-minute Cram</div><h1>Revise / Cram Mode</h1>
+    <p class="lede">Flip through every key fact fast — perfect for the 10 minutes before a quiz or MUN session. Pick a topic, reveal, race ahead. Each card you reveal earns a point toward the leaderboard.</p>
+    ${playerBarHTML()}
+    <div class="cram-top">${REVISE_CATS.map(c=>`<button class="filterbtn ${cram.cat===c?"active":""}" onclick="cramStart('${c}');document.querySelectorAll('.cram-top .filterbtn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">${c}</button>`).join("")}
+      <button class="btn ghost" id="autobtn" onclick="cramAuto(this)" style="margin-left:auto">▶ Auto-play</button></div>
+    <div class="cram-stage" id="cram-stage"></div>`,
+  board:()=>`
+    <div class="eyebrow">Monthly Standings</div><h1>Leaderboard</h1>
+    <p class="lede">This month's top revisers. Points come from quiz answers and cram sessions. Set your name once and your scores track automatically.</p>
+    ${playerBarHTML()}
+    <div id="boardhost"></div>`,
+  uae:()=>newsPage("uae","UAE Current Affairs","From federation facts to COP28 and the Hope Probe — everything UAE a quizzer needs, in cards."),
+  daily:()=>`
+    <div class="eyebrow">For Civil Services Aspirants</div><h1>UPSC Daily Brief</h1>
+    <p class="lede">One mixed feed, exam-curated: UAE & Gulf headlines first, then the world stories most likely to surface in Prelims or Mains. Every live card carries a 📌 GS-paper mapping.</p>
+    ${fetchBar("daily")}
+    <h2>How news maps to the UPSC syllabus</h2>
+    <div class="grid cols-4">
+      <article class="card b-quiz"><span class="tag t-quiz">GS-I</span><h3>History · Geography · Society</h3><p>Heritage news, demographic reports, urbanisation, monsoon & disaster geography.</p></article>
+      <article class="card b-world"><span class="tag t-world">GS-II</span><h3>Polity · Governance · IR</h3><p>Constitutional issues, govt schemes, India–UAE/Gulf ties, UN resolutions, summits & treaties.</p></article>
+      <article class="card b-econ"><span class="tag t-econ">GS-III</span><h3>Economy · Sci-Tech · Environment</h3><p>RBI policy, oil & trade, ISRO missions, AI regulation, COP outcomes, internal security.</p></article>
+      <article class="card b-tech"><span class="tag t-tech">GS-IV + Prelims</span><h3>Ethics & Fact Bank</h3><p>Case-study material from governance news; one-line facts for Prelims recall.</p></article>
+    </div>
+    <h2>Why UAE news matters for UPSC</h2>
+    <ul class="tips">
+      <li><b>CEPA (2022):</b> India–UAE Comprehensive Economic Partnership Agreement — India's first CEPA in the region.</li>
+      <li><b>Energy security:</b> the UAE is among India's top crude suppliers and a strategic-petroleum-reserve partner.</li>
+      <li><b>Diaspora:</b> ~3.5 million Indians in the UAE — remittances, labour reforms and consular issues are standard Mains fodder.</li>
+      <li><b>I2U2 & West Asia:</b> the India–Israel–UAE–USA grouping and UAE's BRICS entry are favourite Prelims questions.</li>
+      <li><b>Climate diplomacy:</b> COP28's 'UAE Consensus' on transitioning from fossil fuels is quotable in any environment answer.</li>
+    </ul>`,
+  world:()=>newsPage("world","World Current Affairs","Geopolitics decoded: the UN system, global groupings and the frameworks behind the headlines."),
+  tech:()=>newsPage("tech","Science & Technology","AI, space missions, medicine, robotics and energy — the fastest-moving quiz category."),
+  econ:()=>newsPage("econ","Economy & Business","Oil, markets, institutions and Big Tech — the mechanics behind every business headline."),
+  countries:()=>`
+    <div class="eyebrow">World Atlas</div><h1>Country Information</h1>
+    <p class="lede">Identity cards for every nation — capital, population, language, currency and one quiz-worthy fact. Use the AI lookup for any country not listed.</p>
+    <div class="searchrow"><input id="country-q" placeholder="Type any country… e.g. Indonesia" onkeydown="if(event.key==='Enter')lookupCountry()"><button class="btn" onclick="lookupCountry()">AI lookup</button></div>
+    <div class="grid cols-3" id="country-ai" style="margin-bottom:22px"></div>
+    <div class="grid cols-3">${COUNTRIES.map(c=>countryCard(c)).join("")}</div>`,
+  brands:()=>`
+    <div class="eyebrow">Brand Bank</div><h1>Companies, Logos & Taglines</h1>
+    <p class="lede">The most-asked branding questions in school quizzes: who says what, founded when, and by whom.</p>
+    <div class="note">ℹ️ Logos are shown as colour monograms (real logos are trademarked artwork). The brand colour + initial is itself a great memory hook for quizzes.</div>
+    <div class="grid cols-3">${BRANDS.map(b=>`<article class="card b-econ"><div class="brand"><div class="mono" style="background:${b.c}">${b.l}</div><div><h3>${b.n}</h3><div class="tagline">“${b.t}”</div><span class="tag t-econ">${b.i}</span><div class="meta">${b.m}</div></div></div></article>`).join("")}</div>`,
+  quiz:()=>`
+    <div class="eyebrow">Revision Engine</div><h1>Quiz & MUN</h1>
+    <p class="lede">Start with today's question, flip the flashcards, run the rapid-fire round (now mixing general knowledge + brand taglines, fresh each time), then sharpen committee skills. Correct answers bank points on the leaderboard.</p>
+    ${playerBarHTML()}
+    <h2>🗓️ Question of the Day</h2>
+    <div class="qz" id="qotd" style="margin-bottom:8px"></div>
+    <h2>⚡ Flashcards — tap to flip</h2>
+    <div class="grid cols-4">${FLASHCARDS.map((f,i)=>`<div class="flash" onclick="this.classList.toggle('flipped')" id="fl${i}"><div class="flash-inner"><div class="flash-face flash-front">${f[0]}<span class="hint">TAP</span></div><div class="flash-face flash-back">${f[1]}</div></div></div>`).join("")}</div>
+    <h2>🎯 Rapid-fire quiz</h2><div class="qz" id="qzbox"></div>
+    <h2>🏛️ MUN skill drill</h2><ul class="tips">${MUN_TIPS.map(t=>`<li>${t}</li>`).join("")}</ul>`,
+  sources:()=>`
+    <div class="eyebrow">Transparency</div><h1>Sources & Method</h1>
+    <p class="lede">Every fact on this hub is summarized — never copied — from verified educational and news platforms.</p>
+    <h2>📰 News</h2><div class="srcgrid">${[["Gulf News","UAE & Gulf coverage"],["The Times of India","India & South Asia"],["Reuters","Global wire reference"],["Financial Times","Business & markets"]].map(x=>`<div class="card b-world"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div>
+    <h2>🎓 Educational GK</h2><div class="srcgrid">${[["GKToday","Exam-oriented general knowledge"],["Jagran Josh","Current-affairs revision"]].map(x=>`<div class="card b-quiz"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div>
+    <h2>🌍 International & Science</h2><div class="srcgrid">${[["United Nations","Official reports & frameworks"],["NASA","Mission updates"],["SpaceX","Launch & Starship updates"],["MIT Technology Review","AI & deep-tech insight"]].map(x=>`<div class="card b-tech"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div>
+    <h2>🧠 How sources are used</h2>
+    <ul class="tips"><li><b>Summarized, not copied</b> — every card is rewritten in plain student language.</li><li><b>Simplified for learning</b> — 2–4 line limits force clarity.</li><li><b>Categorized</b> — every item lands in one learning section with a colour tag.</li><li><b>Live mode</b> — fetch buttons pull fresh headlines, UAE prioritised, with exam tags.</li></ul>`,
+};
+
+/* ================= NAV / BOOT ================= */
+const NAV=[["home","Home"],["daily","UPSC Daily"],["revise","Revise"],["board","Leaderboard"],["uae","UAE"],["world","World"],["tech","Sci-Tech"],["econ","Economy"],["countries","Countries"],["brands","Brands"],["quiz","Quiz & MUN"],["sources","Sources"]];
+let curPage="home";
+function renderQOTDHome(){
+  const host=document.getElementById("qotd-home"); if(!host) return;
+  const q=qotdPick();
+  host.innerHTML=`<div class="q"><div class="lbl">🗓️ Question of the Day</div><div class="txt">${esc(q.q)}</div></div>
+    <button class="btn" onclick="go('quiz')">${qotdDone()?"View answer →":"Answer it →"}</button>`;
+}
+function go(id){
+  curPage=id;
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="pg-"+id));
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+  if(cram.auto){ clearInterval(cram.auto); cram.auto=null; }
+  if(id==="home") renderQOTDHome();
+  if(id==="quiz"){ startQuiz(); renderQOTD(); }
+  if(id==="revise") cramStart(cram.cat);
+  if(id==="board") renderBoard();
+  window.scrollTo({top:0});
+}
 (function boot(){
   const nav=document.getElementById("nav");
-  NAV.forEach(([id,label])=>{
-    const b=document.createElement("button");
-    b.textContent=label; b.dataset.id=id; b.onclick=()=>go(id);
-    nav.appendChild(b);
-  });
+  NAV.forEach(([id,label])=>{ const b=document.createElement("button"); b.textContent=label; b.dataset.id=id; b.onclick=()=>go(id); nav.appendChild(b); });
   const main=document.getElementById("pages");
-  NAV.forEach(([id])=>{
-    const s=document.createElement("section");
-    s.className="page"; s.id="pg-"+id; s.innerHTML=PAGES[id]();
-    main.appendChild(s);
-  });
+  NAV.forEach(([id])=>{ const s=document.createElement("section"); s.className="page"; s.id="pg-"+id; s.innerHTML=PAGES[id](); main.appendChild(s); });
   const t=document.getElementById("ticker");
   const items=TICKER_FACTS.map(([k,v])=>`&nbsp;&nbsp;◆&nbsp;&nbsp;<b>${k}</b> ${v}`).join("");
   t.innerHTML=items+items;
